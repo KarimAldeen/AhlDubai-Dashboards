@@ -21,7 +21,7 @@ import SearchField from '../../Layout/Dashboard/SearchField'
     
   return (
     // Pass Status to Layout 
-    <DashBody>
+    <DashBody status={status as QueryStatusEnum} >
       <DashHeader showAddButton={false} title={'Partners'}>
       <div className='RightSide d-flex gap-2 align-center '>
      <SearchField searchBy={"title"} />
@@ -31,7 +31,7 @@ import SearchField from '../../Layout/Dashboard/SearchField'
       </DashHeader>
       
       <LyTable
-        data={data?.data || []}
+        data={data?.data}
         isLoading={false}
         columns={column}
         total={totalRows }

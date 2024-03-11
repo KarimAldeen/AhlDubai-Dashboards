@@ -9,9 +9,9 @@ import { BiSolidCoupon } from "react-icons/bi";
 // Pages Import
 
 
-import BlogPage from "./Pages/Blog/Page";
-import AddBlogPage from "./Pages/Blog/View/AddPage";
-import EditBlog  from "./Pages/Blog/View/EditPage";
+// import BlogPage from "./Pages/Blog/Page";
+// import AddBlogPage from "./Pages/Blog/View/AddPage";
+// import EditBlog  from "./Pages/Blog/View/EditPage";
 
 
 import DoctorsPage from "./Pages/Doctors/Page";
@@ -20,9 +20,9 @@ import EditDoctors  from "./Pages/Doctors/View/EditPage";
 
 
 
-import FooterPage from "./Pages/Footer/Page";
-import AddFooterPage from "./Pages/Footer/View/AddPage";
-import EditFooter  from "./Pages/Footer/View/EditPage";
+// import FooterPage from "./Pages/Footer/Page";
+// import AddFooterPage from "./Pages/Footer/View/AddPage";
+// import EditFooter  from "./Pages/Footer/View/EditPage";
 
 
 import HomePage from "./Pages/Home/HomePage";
@@ -34,15 +34,27 @@ import AddPartnersPage from "./Pages/Partners/View/AddPage";
 import EditPartners  from "./Pages/Partners/View/EditPage";
 
 
-import ServicesPage from "./Pages/Services/Page";
-import AddServicesPage from "./Pages/Services/View/AddPage";
-import EditServices  from "./Pages/Services/View/EditPage";
+import ServicePage from "./Pages/Service/Page";
+import AddServicePage from "./Pages/Service/View/AddPage";
+import EditService  from "./Pages/Service/View/EditPage";
+
+
+import ServiceBenefitPage from "./Pages/ServiceBenefit/Page";
+import AddServiceBenefitPage from "./Pages/ServiceBenefit/View/AddPage";
+import EditServiceBenefit  from "./Pages/ServiceBenefit/View/EditPage";
   
 
 
-import SliderPage from "./Pages/Slider/Page";
-import AddSliderPage from "./Pages/Slider/View/AddPage";
-import EditSlider  from "./Pages/Slider/View/EditPage";
+import SubServicePage from "./Pages/SubService/Page";
+import AddSubServicePage from "./Pages/SubService/View/AddPage";
+import EditSubService  from "./Pages/SubService/View/EditPage";
+  
+  
+
+
+// import SliderPage from "./Pages/Slider/Page";
+// import AddSliderPage from "./Pages/Slider/View/AddPage";
+// import EditSlider  from "./Pages/Slider/View/EditPage";
 
 
 interface RoutesLinksType {
@@ -94,69 +106,102 @@ export const RoutesLinks: RoutesLinksType[] = [
         element: <AddDoctorsPage />,
         hidden: true
     },
+    // {
+    //     name: "Blog",
+    //     element: <BlogPage />,
+    //     icon: <FaCartArrowDown />,
+    //     href: "/Blog",
+    // },
+    // {
+    //     href: "/Blog/:id",
+    //     element: <EditBlog />,
+    //     hidden: true
+    // },
+    // {
+    //     href: "/Blog/add",
+    //     element: <AddBlogPage />,
+    //     hidden: true
+    // },
     {
-        name: "Blog",
-        element: <BlogPage />,
-        icon: <FaCartArrowDown />,
-        href: "/Blog",
-    },
-    {
-        href: "/Blog/:id",
-        element: <EditBlog />,
-        hidden: true
-    },
-    {
-        href: "/Blog/add",
-        element: <AddBlogPage />,
-        hidden: true
-    },
-    {
-        name: "Services",
-        element: <ServicesPage />,
+        name: "Service",
+        element: <ServicePage />,
         icon: <BiSolidCategory />,
-        href: "/Services",
+        href: "/Service",
     },
     {
-        href: "/Services/:id",
-        element: <EditServices />,
+        href: "/Service/:id",
+        element: <EditService />,
         hidden: true
     },
     {
-        href: "/Services/add",
-        element: <AddServicesPage />,
+        href: "/Service/add",
+        element: <AddServicePage />,
         hidden: true
     },
     {
-        name: "Slider",
-        element: <SliderPage />,
-        icon: <FaProductHunt />,
-        href: "/Slider",
+        name: "SubService",
+        element: <SubServicePage />,
+        icon: <BiSolidCategory />,
+        href: "/SubService",
     },
     {
-        href: "/Slider/:id",
-        element: <EditSlider />,
+        href: "/SubService/:id",
+        element: <EditSubService />,
         hidden: true
     },
     {
-        href: "/Slider/add",
-        element: <AddSliderPage />,
+        href: "/SubService/add",
+        element: <AddSubServicePage />,
         hidden: true
     },
     {
-        name: "Footer",
-        element: <FooterPage />,
-        icon: <BiSolidCoupon />,
-        href: "/Footer",
+        name: "ServiceBenefit",
+        element: <ServiceBenefitPage />,
+        icon: <BiSolidCategory />,
+        href: "/ServiceBenefit",
     },
     {
-        href: "/Footer/:id",
-        element: <EditFooter />,
+        href: "/ServiceBenefit/:id",
+        element: <EditServiceBenefit />,
         hidden: true
     },
     {
-        href: "/Footer/add",
-        element: <AddFooterPage />,
+        href: "/ServiceBenefit/add",
+        element: <AddServiceBenefitPage />,
         hidden: true
     },
+ 
+    // {
+    //     name: "Slider",
+    //     element: <SliderPage />,
+    //     icon: <FaProductHunt />,
+    //     href: "/Slider",
+    // },
+    // {
+    //     href: "/Slider/:id",
+    //     element: <EditSlider />,
+    //     hidden: true
+    // },
+    // {
+    //     href: "/Slider/add",
+    //     element: <AddSliderPage />,
+    //     hidden: true
+    // },
+    // {
+    //     name: "Footer",
+    //     element: <FooterPage />,
+    //     icon: <BiSolidCoupon />,
+    //     href: "/Footer",
+    // },
+    // {
+    //     href: "/Footer/:id",
+    //     element: <EditFooter />,
+    //     hidden: true
+    // },
+    // {
+    //     href: "/Footer/add",
+    //     element: <AddFooterPage />,
+    //     hidden: true
+    // },
     // Add more pages following the same pattern...
 ];

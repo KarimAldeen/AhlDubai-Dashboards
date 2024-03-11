@@ -5,6 +5,7 @@ import Actions from "../../Components/Ui/tables/Actions";
 import ColumnsImage from "../../Components/Columns/ColumnsImage";
 import { useNavigate } from "react-router-dom";
 import { useDeletePartners } from "../../api/Partners";
+import { usePageState } from "../../lib/state mangment/LayoutPagestate";
 
 function fnDelete(props :any ){}
 
@@ -12,6 +13,12 @@ const useTableColumns :any = () => {
   const [t] = useTranslation();
   const deleteMutation = useDeletePartners()
   const navigate = useNavigate()
+  const { setObjectToEdit, objectToEdit } = usePageState()
+  function handelEdit(row:any){
+    setObjectToEdit(row)
+    navigate(`/Partners/${row.id}`)
+  }
+
   return useMemo(
     () => [
  
@@ -40,37 +47,14 @@ const useTableColumns :any = () => {
           <Actions
             objectToEdit={row}
             
-            onEdit={()=> navigate(`/Partners/${row.id}`) }
+            onEdit={()=> handelEdit(row) }
             showView={false}
             showEdit={false}
             onDelete={() => deleteMutation.mutate({ id: row.id })}
           />
         ),
       },
-      // {
-      //   name: t("status"),
-      //   sortable: false,
-      //   center: "true",
-      //   cell: (row:any) => {
-
-      //     return(
-      //       <p style={{
-      //         background:!row.deleted_at ?'#19ab27':'#ea5454',
-      //         color:"white",
-      //         padding:6,
-      //         borderRadius:10,
-      //         position:"relative",
-      //         top:'7px'
-      //       }}>
-      //         {
-      //           !row.deleted_at ? t('available') : t('unavailable')
-
-      //         }
-      //       </p>
-      //     ) 
-      //   }
-      // },
-    
+   
     ],
     [t]
   );

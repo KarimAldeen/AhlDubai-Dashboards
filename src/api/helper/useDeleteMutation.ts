@@ -15,7 +15,7 @@ function useDeleteMutation(key:any , url: string): UseMutationResult<AxiosRespon
 
   return useMutation<AxiosResponse, unknown, any, unknown>(
     async ({dataToSend,id}:any) => {
-      const { data } = await axios.delete(url+"/"+id );
+      const { data } = await axios.delete(url );
       return {...data, id,dataToSend};
     },
     {

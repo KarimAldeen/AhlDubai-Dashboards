@@ -1,6 +1,8 @@
+import { langauge_validation_genrater, langauge_initial_values_genrater } from '../../Hooks/useLanguageGenrater';
 
 import * as Yup from "yup";
 import { buildFormData } from "../../api/helper/buildFormData";
+import { languages } from "../../config/AppKey";
 
 interface formUtilCommon {
   number:number,
@@ -13,31 +15,31 @@ interface ObjectToEdit extends formUtilCommon {
 
 }
 
-interface InitialValues extends ObjectToEdit {
 
-}
-interface ValidateSchema  extends formUtilCommon{
-
-}
 export const getInitialValues = (objectToEdit: any | null = null): any => {
-  console.log(objectToEdit,"objectToEdit");
-  return {
+
+  // Initialize the initial values object
+  const initialValues: any = {
     id: objectToEdit?.id ?? 0,
-    title:objectToEdit?.title ?? "",
     image: objectToEdit?.image ?? '',
-   
+    ...langauge_initial_values_genrater(["name","type","description"],objectToEdit) ,
+
+
   };
+
+  return initialValues;
 };
+
 
 
 export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> => {
   // Validate input
   return Yup.object().shape({
-    title: Yup.string().required('Required'),
-    image: Yup.string().required('Required'),
-
+    name: Yup.string().required('Required'),
+    ...langauge_validation_genrater(["name","type","description"]) 
   });
 };
+
 
 
 

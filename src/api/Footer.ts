@@ -7,10 +7,10 @@ import useGetQuery from "./helper/useGetQuery"
 import useUpdateMutation from "./helper/useUpdateMutation";
   
 const API = {
-  ADD: `Footer`,
-  GET_ALL: `Footer`,
-  DELETE: `Footer`,
-  UPDATE: `Footer`,
+  ADD: `doctor/add`,
+  GET_ALL: `doctor/getAll`,
+  DELETE: `doctor/delete`,
+  UPDATE: `doctor/update`,
 
 };
 const KEY = "Footer"

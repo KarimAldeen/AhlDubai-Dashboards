@@ -7,22 +7,23 @@ import ViewPage from '../../../Layout/Dashboard/ViewPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
-import { useAddPartners } from '../../../api/Partners';
+import { useAddService } from '../../../api/Service';
 import Form from './AddForm';
 
-const AddPartnersPage = () => {
+const AddServicePage = () => {
     
 
-    const {mutate , isLoading , isSuccess} = useAddPartners()
+    const {mutate , isLoading , isSuccess} = useAddService()
   const handleSubmit = (values:any)=>{
-
+      console.log(values,"values");
+      
     mutate(values)  
    
     
   }
   const {t} = useTranslation();
 
-  useNavigateOnSuccess(isSuccess , '/Partners'  )
+  useNavigateOnSuccess(isSuccess , '/Service'  )
   
 
 
@@ -54,4 +55,4 @@ const AddPartnersPage = () => {
 
 }
 
-export default AddPartnersPage
+export default AddServicePage

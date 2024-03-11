@@ -11,39 +11,25 @@ import { useParams } from 'react-router-dom';
 import LoadingPage from '../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import { useGetOnePartners, useUpdatePartners } from '../../../api/Partners';
+import {  useUpdateService } from '../../../api/Service';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
-  const { data } = useGetOnePartners()
-  const {mutate ,isSuccess} = useUpdatePartners()
-  const FormatedData = data?.data ;
+  const {mutate ,isSuccess} = useUpdateService()
   const handleSubmit = (values:any)=>{
   
     const newData = {} as any;
 
-    for (const key in FormatedData) {
-        if (values[key] !== FormatedData[key]) {
-            newData[key] = values[key];
-        }
-
-      }
-
     return mutate(newData);
   }
 
-  useNavigateOnSuccess(isSuccess , '/Partners')
+  useNavigateOnSuccess(isSuccess , '/Service')
 
 
-  useEffect(() => {
-    console.log(data);
-    
-    setObjectToEdit(data?.category);
-     
-  }, [data]);
+
 
 
    const getValidationSchema = () => {
@@ -56,7 +42,7 @@ const EditPage = () => {
 
   return (
     <div className='ViewPage'>
-      {objectToEdit && data ?
+      {objectToEdit ?
         <ViewPage {...ViewProps}>
           <Tabs>
             <TabList>

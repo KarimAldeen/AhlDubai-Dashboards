@@ -7,17 +7,16 @@ import useGetQuery from "./helper/useGetQuery"
 import useUpdateMutation from "./helper/useUpdateMutation";
   
 const API = {
-  ADD: `Doctors`,
-  GET_ALL: `Doctors`,
-  DELETE: `Doctors`,
-  UPDATE: `Doctors`,
+  ADD: `doctor/add`,
+  GET_ALL: `doctor/getAll`,
+  DELETE: `doctor/delete`,
+  UPDATE: `doctor/update`,
 
 };
 const KEY = "Doctors"
 
 
 export const useGetDoctors = (params?:any) => useGetQueryPagination(KEY, API.GET_ALL,params);
-export const useGetOneDoctors = () => useGetOneQuery(KEY, API.GET_ALL);
 
 export const useAddDoctors = () => useAddMutation(KEY, API.ADD);
 export const useUpdateDoctors = () => useUpdateMutation(KEY, API.UPDATE);

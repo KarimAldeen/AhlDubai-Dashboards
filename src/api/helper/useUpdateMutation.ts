@@ -22,17 +22,14 @@ const useUpdateMutation = (
 
   return useMutation<AxiosResponse, unknown, unknown>(
     async (dataToSend) => {
-      if(method === "put"){
-        const { data } = await axios.put(url+"/"+id, dataToSend );
-        return data;
-      }else{
-        const { data } = await axios.post(url+"/"+id, dataToSend,{
+
+        const { data } = await axios.post(url, dataToSend,{
           headers: {
             'Content-Type': 'multipart/form-data' 
           }
         });
         return data;
-      }
+      
 
       
      
