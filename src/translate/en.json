@@ -1,0 +1,30 @@
+{
+    "Ar": "Ar",
+    "En": "En",
+    "Arabic": "Arabic",
+    "English": "English",
+    "German": "German",
+    "Login": "Login",
+    "Welcome back, please login to your account.": "Welcome back, please login to your account.",
+    "Username": "Username",
+    "Password": "Password",
+    "Sign in": "Sign in",
+    "Point © 2022 | All Rights Reserved": "Point © 2022 | All Rights Reserved",
+    "unknown": "unknown",
+    "super admin": "super admin",
+    "Home": "Home",
+    "example": "example",
+    "Log Out": "Log Out",
+    "Example": "Example",
+    "Add": "Add",
+    "edit": "Edit",
+    "ligth": "Light",
+    "dark": "Dark",
+  "failed_to_add_data": "Failed to add data",
+  "delete_are_you_sure": "Are you sure you want to delete?",
+  "yes_delete_it": "Yes, delete it",
+  "cancel": "Cancel",
+  "required_error":"required_error"
+
+
+}
