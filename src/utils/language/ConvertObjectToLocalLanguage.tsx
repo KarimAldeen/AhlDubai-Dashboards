@@ -15,8 +15,16 @@ const fakeArray: any[] = [
     { local: "ar", name: 'Banana', name_fr: 'Banane', description: 'Another fruit' },
 ];
 
-export const convert_language_array_to_local = (array: any[], field: string): string[] => {
+export const convert_language_array_to_local = (array: any[], field: string): string => {
     const language: string = localStorage.getItem("language") || "en";
+
+
+    console.log(!Array.isArray(array));
+    
+    if((array.length == 0)){
+
+        return "" 
+    }
         console.log(array,"array");
         console.log(language);
         

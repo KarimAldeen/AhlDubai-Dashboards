@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import AddButton from '../../Layout/Dashboard/AddButton/AddButton'
 import { useGetPartners } from '../../api/Partners'
 import SearchField from '../../Layout/Dashboard/SearchField'
+import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
 
  function Page() {
 
@@ -17,6 +18,7 @@ import SearchField from '../../Layout/Dashboard/SearchField'
     const {data  ,status } = useGetPartners()
     const [t] = useTranslation()
     const navigate = useNavigate()
+    const { setObjectToEdit} = usePageState()
     const totalRows = data?.pagination?.total;
     
   return (
@@ -26,7 +28,10 @@ import SearchField from '../../Layout/Dashboard/SearchField'
       <div className='RightSide d-flex gap-2 align-center '>
      <SearchField searchBy={"title"} />
 
-     <AddButton  onClick={()=>navigate('add')}></AddButton>
+     <AddButton  onClick={()=>{
+      setObjectToEdit(null)
+      navigate('add')
+      }}></AddButton>
      </div>
       </DashHeader>
       

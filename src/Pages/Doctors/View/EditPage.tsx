@@ -19,11 +19,18 @@ const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
   const {mutate ,isSuccess} = useUpdateDoctors()
+
+  
   const handleSubmit = (values:any)=>{
   
     const newData = {} as any;
 
-    return mutate(newData);
+    console.log(values);
+    
+    return mutate(getDataToSend({
+      ...values ,
+      doctor_id:objectToEdit?.id
+    }));
   }
 
   useNavigateOnSuccess(isSuccess , '/Doctors')

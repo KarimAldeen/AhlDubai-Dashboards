@@ -27,7 +27,7 @@ import { useGetDoctors } from '../../api/Doctors'
     <DashBody status={status as QueryStatusEnum} >
       <DashHeader showAddButton={false} title={'Doctors'}>
       <div className='RightSide d-flex gap-2 align-center '>
-     <SearchField searchBy={"title"} />
+     {/* <SearchField searchBy={"title"} /> */}
 
      <AddButton  onClick={()=>navigate('add')}></AddButton>
      </div>
