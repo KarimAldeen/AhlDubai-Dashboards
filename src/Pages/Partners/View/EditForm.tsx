@@ -13,19 +13,14 @@ function Form() {
   const [t] = useTranslation()
 
   return (
-    <Row xs={1} sm={1} md={2} lg={3} xl={3}>
+    <Row xs={1} sm={1} md={2} lg={2} xl={2}>
     <Col>
-    {langauge_field_genrater(["name"])}
     <ValidationField name="image" type="File" />
 
-    </Col>
-    <Col>
-    {langauge_field_genrater(["type"])}
-
 
     </Col>
+  
     <Col>
-    {langauge_field_genrater(["description"])}
 
 
     </Col>

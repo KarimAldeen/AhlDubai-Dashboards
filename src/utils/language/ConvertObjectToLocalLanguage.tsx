@@ -30,6 +30,8 @@ export const convert_language_array_to_local = (array: any[], field: string): st
 
 export const convert_language_array_to_field = (array: any[], field: string, language: string): string[] => {
     // Check if array is defined and is an array
+    console.log(array,"array");
+    
     if (!Array.isArray(array)) {
         console.error('Invalid input: array is not an array.');
         return [];

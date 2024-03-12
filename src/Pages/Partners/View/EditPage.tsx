@@ -11,22 +11,21 @@ import { useParams } from 'react-router-dom';
 import LoadingPage from '../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import {  useUpdateDoctors } from '../../../api/Doctors';
+import {  useUpdatePartners } from '../../../api/Partners';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
-  const {mutate ,isSuccess} = useUpdateDoctors()
+  const {mutate ,isSuccess} = useUpdatePartners()
   const handleSubmit = (values:any)=>{
   
-    const newData = {} as any;
 
-    return mutate(newData);
+    return mutate(values);
   }
 
-  useNavigateOnSuccess(isSuccess , '/Doctors')
+  useNavigateOnSuccess(isSuccess , '/partners')
 
 
 

@@ -18,11 +18,9 @@ interface ObjectToEdit extends formUtilCommon {
 
 export const getInitialValues = (objectToEdit: any | null = null): any => {
 
-  // Initialize the initial values object
   const initialValues: any = {
-    id: objectToEdit?.id ?? 0,
+    partner_id: objectToEdit?.id ?? 0,
     image: objectToEdit?.image ?? '',
-    ...langauge_initial_values_genrater(["name","type","description"],objectToEdit) ,
 
 
   };
@@ -36,7 +34,6 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
   // Validate input
   return Yup.object().shape({
     image: Yup.string().required('Required'),
-    ...langauge_validation_genrater(["name","type","description"]) 
   });
 };
 
