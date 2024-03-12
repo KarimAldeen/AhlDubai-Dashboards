@@ -10,19 +10,22 @@ import { useNavigate } from 'react-router-dom'
 import AddButton from '../../Layout/Dashboard/AddButton/AddButton'
 import { useGetPartners } from '../../api/Partners'
 import SearchField from '../../Layout/Dashboard/SearchField'
+import { useGetDoctors } from '../../api/Doctors'
 
  function Page() {
 
     const column   =useTableColumns()
-    const {data  ,status } = useGetPartners()
+    const {data  ,status } = useGetDoctors()
     const [t] = useTranslation()
     const navigate = useNavigate()
+    console.log(data);
+    
     const totalRows = data?.pagination?.total;
     
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader showAddButton={false} title={'Partners'}>
+      <DashHeader showAddButton={false} title={'Doctors'}>
       <div className='RightSide d-flex gap-2 align-center '>
      <SearchField searchBy={"title"} />
 

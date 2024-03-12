@@ -18,13 +18,11 @@ const fakeArray: any[] = [
 export const convert_language_array_to_local = (array: any[], field: string): string[] => {
     const language: string = localStorage.getItem("language") || "en";
         console.log(array,"array");
+        console.log(language);
         
     return array
-        ?.filter(item => item.local === language)
-        ?.map(item => {
-            const value = item[field];
-            return value !== undefined ? value : null;
-        });
+        ?.find(item => item.locale === language)[field]
+       
 }
 
 

@@ -24,11 +24,15 @@ const useTableColumns :any = () => {
     () => [
  
       {
-        name: t("title"),
+        name: t("name"),
         sortable: false,
         center: "true",
         
-        cell: (row:any) =>  convert_language_array_to_local(row?.language, "title")
+        cell: (row:any) =>  {
+
+         return  (convert_language_array_to_local(row?.translations, "name"));
+          
+        }
       },
       {
         name: t("image"),

@@ -15,7 +15,7 @@ const navigate = useNavigate()
   return useQuery(
     [KEY, pagination], async () => {
     const response = await axios.get(Api + pagination , {params});
-    return response.data; 
+    return response?.data?.data; 
   },
   {
     onError: (error:any) => {
