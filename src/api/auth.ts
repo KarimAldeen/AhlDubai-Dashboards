@@ -5,7 +5,7 @@ import useAddMutation from "./helper/useAddMutation";
 
 const KEY = "AUTH"
 const API = {
-    LOGIN: `admin/login`,
-    LOGOUT: `/api/admin/logout`,
+    LOGIN: `auth/login`,
+    LOGOUT: `auth/logout`,
   };
 export const useLoginAdmin  =  ()=>useAddMutation(KEY , API.LOGIN)

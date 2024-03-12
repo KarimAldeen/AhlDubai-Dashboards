@@ -20,10 +20,9 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
 
   // Initialize the initial values object
   const initialValues: any = {
-    id: objectToEdit?.id ?? 0,
-    image: objectToEdit?.image ?? '',
-    ...langauge_initial_values_genrater(["name","type","description"],objectToEdit) ,
-
+    id: objectToEdit?.id ?? null,
+    service_id: objectToEdit?.service_id ?? null,
+    ...langauge_initial_values_genrater(["name"],objectToEdit) ,
 
   };
 
@@ -35,8 +34,8 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
 export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> => {
   // Validate input
   return Yup.object().shape({
-    name: Yup.string().required('Required'),
-    ...langauge_validation_genrater(["name","type","description"]) 
+    service_id: Yup.string().required('Required'),
+    ...langauge_validation_genrater(["name"]) 
   });
 };
 

@@ -16,14 +16,12 @@ function Form() {
     <Row xs={1} sm={1} md={2} lg={3} xl={3}>
     <Col>
     {langauge_field_genrater(["name"])}
-    
-    <ValidationField name="information"  />
+    <ValidationField name="image" type="File" />
 
 
     </Col>
     <Col>
     {langauge_field_genrater(["type"])}
-    <ValidationField name="image" type="File" />
 
 
     </Col>

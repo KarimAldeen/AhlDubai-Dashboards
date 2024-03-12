@@ -8,25 +8,25 @@ import { QueryStatusEnum } from '../../config/QueryStatus'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import AddButton from '../../Layout/Dashboard/AddButton/AddButton'
-import { useGetPartners } from '../../api/Partners'
+import { useGetBenefit } from '../../api/benefit'
 import SearchField from '../../Layout/Dashboard/SearchField'
 
  function Page() {
 
     const column   =useTableColumns()
-    const {data  ,status } = useGetPartners()
+    const {data  ,status } = useGetBenefit()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    const totalRows = data?.meta?.total;
+    const totalRows = data?.pagination?.total;
     
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader showAddButton={false} title={'Partners'}>
+      <DashHeader showAddButton={false} title={'ServiceBenefit'}>
       <div className='RightSide d-flex gap-2 align-center '>
-     <SearchField searchBy={"title"} />
+     <SearchField searchBy={"name"} />
 
-     <AddButton  onClick={()=>navigate('/Partners/add')}></AddButton>
+     <AddButton  onClick={()=>navigate('add')}></AddButton>
      </div>
       </DashHeader>
       

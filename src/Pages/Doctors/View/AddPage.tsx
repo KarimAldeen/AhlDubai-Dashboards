@@ -30,6 +30,8 @@ const AddDoctorsPage = () => {
   const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit };
 
 
+
+
   return (
     <div className='ViewPage'>
   

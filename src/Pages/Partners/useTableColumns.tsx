@@ -16,18 +16,12 @@ const useTableColumns :any = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   function handelEdit(row:any){
     setObjectToEdit(row)
-    navigate(`/Partners/${row.id}`)
+     navigate(`edit`)
   }
 
   return useMemo(
     () => [
- 
-      {
-        name: t("title"),
-        sortable: false,
-        center: "true",
-        cell: (row:any) => row?.title
-      },
+
       {
         name: t("image"),
         sortable: false,
@@ -35,7 +29,6 @@ const useTableColumns :any = () => {
        
         cell: (row:any) =>  {
           let str = row?.image;
-          str =  str?.replace(`public`, "/storage") ?? ""; 
           return <ColumnsImage src={str} />
         }
       },
@@ -49,8 +42,8 @@ const useTableColumns :any = () => {
             
             onEdit={()=> handelEdit(row) }
             showView={false}
-            showEdit={false}
-            onDelete={() => deleteMutation.mutate({ id: row.id })}
+            showEdit={true}
+            onDelete={() => deleteMutation.mutate({ partner_id: row.id })}
           />
         ),
       },

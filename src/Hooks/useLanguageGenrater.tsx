@@ -1,6 +1,7 @@
 import ValidationField from "../Components/ValidationField/ValidationField";
 import { languages } from "../config/AppKey";
 import * as Yup from "yup";
+import { convert_language_array_to_field, convert_language_array_to_local } from "../utils/language/ConvertObjectToLocalLanguage";
 
 // Function to generate language-specific validation fields
 export const langauge_validation_genrater = (fieldNames: string[]): any => {
@@ -18,7 +19,7 @@ export const langauge_initial_values_genrater = (fieldNames: string[], objectToE
   const fields: any = {};
   fieldNames.forEach((fieldName: string) => {
     languages?.forEach((language: string) => {
-      fields[`${fieldName}_${language}`] = objectToEdit ? objectToEdit[`${fieldName}_${language}`] ?? "" : "";
+      fields[`${fieldName}_${language}`] = objectToEdit ? convert_language_array_to_field(objectToEdit,fieldName,language) ?? "" : "";
     });
   });
   return fields;
@@ -34,3 +35,6 @@ export const langauge_field_genrater = (fieldNames: string[]): JSX.Element[] => 
   });
   return fields;
 };
+
+
+

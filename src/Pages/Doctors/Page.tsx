@@ -17,7 +17,7 @@ import SearchField from '../../Layout/Dashboard/SearchField'
     const {data  ,status } = useGetPartners()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    const totalRows = data?.meta?.total;
+    const totalRows = data?.pagination?.total;
     
   return (
     // Pass Status to Layout 
@@ -26,7 +26,7 @@ import SearchField from '../../Layout/Dashboard/SearchField'
       <div className='RightSide d-flex gap-2 align-center '>
      <SearchField searchBy={"title"} />
 
-     <AddButton  onClick={()=>navigate('/Partners/add')}></AddButton>
+     <AddButton  onClick={()=>navigate('add')}></AddButton>
      </div>
       </DashHeader>
       

@@ -14,9 +14,9 @@ function useDeleteMutation(key:any , url: string): UseMutationResult<AxiosRespon
   const {t} = useTranslation();
 
   return useMutation<AxiosResponse, unknown, any, unknown>(
-    async ({dataToSend,id}:any) => {
-      const { data } = await axios.delete(url );
-      return {...data, id,dataToSend};
+    async (dataToSend:any) => {
+      const { data } = await axios.post(url ,dataToSend);
+      return {...data,dataToSend};
     },
     {
       onSuccess: (data) => {

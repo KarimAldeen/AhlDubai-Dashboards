@@ -78,15 +78,15 @@ export const RoutesLinks: RoutesLinksType[] = [
         name: "Partners",
         element: <PartnersPage />,
         icon: <FaRegImages />,
-        href: "/Partners",
+        href: "/partners",
     },
     {
-        href: "/Partners/:id",
+        href: "/partners/edit",
         element: <EditPartners />,
         hidden: true
     },
     {
-        href: "/Partners/add",
+        href: "/partners/add",
         element: <AddPartnersPage />,
         hidden: true
     },
@@ -94,15 +94,15 @@ export const RoutesLinks: RoutesLinksType[] = [
         name: "Doctors",
         element: <DoctorsPage />,
         icon: <FaProductHunt />,
-        href: "/Doctors",
+        href: "/doctors",
     },
     {
-        href: "/Doctors/:id",
+        href: "/doctors/edit",
         element: <EditDoctors />,
         hidden: true
     },
     {
-        href: "/Doctors/add",
+        href: "/doctors/add",
         element: <AddDoctorsPage />,
         hidden: true
     },
@@ -113,7 +113,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     //     href: "/Blog",
     // },
     // {
-    //     href: "/Blog/:id",
+    //     href: "/Blog/edit",
     //     element: <EditBlog />,
     //     hidden: true
     // },
@@ -126,15 +126,15 @@ export const RoutesLinks: RoutesLinksType[] = [
         name: "Service",
         element: <ServicePage />,
         icon: <BiSolidCategory />,
-        href: "/Service",
+        href: "/service",
     },
     {
-        href: "/Service/:id",
+        href: "/service/edit",
         element: <EditService />,
         hidden: true
     },
     {
-        href: "/Service/add",
+        href: "/service/add",
         element: <AddServicePage />,
         hidden: true
     },
@@ -142,15 +142,15 @@ export const RoutesLinks: RoutesLinksType[] = [
         name: "SubService",
         element: <SubServicePage />,
         icon: <BiSolidCategory />,
-        href: "/SubService",
+        href: "/service/sub",
     },
     {
-        href: "/SubService/:id",
+        href: "/service/sub/edit",
         element: <EditSubService />,
         hidden: true
     },
     {
-        href: "/SubService/add",
+        href: "/service/sub/add",
         element: <AddSubServicePage />,
         hidden: true
     },
@@ -158,15 +158,15 @@ export const RoutesLinks: RoutesLinksType[] = [
         name: "ServiceBenefit",
         element: <ServiceBenefitPage />,
         icon: <BiSolidCategory />,
-        href: "/ServiceBenefit",
+        href: "/service/benefit",
     },
     {
-        href: "/ServiceBenefit/:id",
+        href: "/service/benefit/edit",
         element: <EditServiceBenefit />,
         hidden: true
     },
     {
-        href: "/ServiceBenefit/add",
+        href: "/service/benefit/add",
         element: <AddServiceBenefitPage />,
         hidden: true
     },
@@ -178,7 +178,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     //     href: "/Slider",
     // },
     // {
-    //     href: "/Slider/:id",
+    //     href: "/Slider/edit",
     //     element: <EditSlider />,
     //     hidden: true
     // },
@@ -194,7 +194,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     //     href: "/Footer",
     // },
     // {
-    //     href: "/Footer/:id",
+    //     href: "/Footer/edit",
     //     element: <EditFooter />,
     //     hidden: true
     // },

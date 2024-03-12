@@ -16,13 +16,23 @@ interface ObjectToEdit extends formUtilCommon {
 }
 
 
+const fakeArray: any[] = [
+
+  { local: "en", name: 'Apple', name_fr: 'Pomme', description: 'A fruit' },
+  { local: "ar", name: 'Banana', name_fr: 'Banane', description: 'Another fruit' },
+];
+
+
+
 export const getInitialValues = (objectToEdit: any | null = null): any => {
 
   // Initialize the initial values object
   const initialValues: any = {
     id: objectToEdit?.id ?? 0,
     image: objectToEdit?.image ?? '',
-    ...langauge_initial_values_genrater(["name","type","description"],objectToEdit) ,
+    sub_image: objectToEdit?.sub_image ?? '',
+
+    ...langauge_initial_values_genrater(["title","sub_title"],objectToEdit?.language) ,
 
 
   };
@@ -36,7 +46,7 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
   // Validate input
   return Yup.object().shape({
     name: Yup.string().required('Required'),
-    ...langauge_validation_genrater(["name","type","description"]) 
+    ...langauge_validation_genrater(["name","sub_title"]) 
   });
 };
 

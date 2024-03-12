@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import Loading from './Components/Utils/Loading/Loading';
 import { RoutesLinks } from './Routes';
 import Layout from './Layout/app/Layout';
+import Auth from './Pages/Auth/Page';
+
 const Page404 = lazy(() => import("./Layout/app/NotFoundPage"))
 
 const App = () => {
@@ -12,8 +14,10 @@ const App = () => {
     <Routes >
       {/* 404 Page */}
       <Route path="*" element={<Suspense fallback={<Loading />}> <Page404 /></Suspense>} />
+      
       {/* Login Page  */}
 
+      <Route path="/auth" element={<Suspense fallback={<Loading />}> <Auth /></Suspense>} />      
 
 
       {/* All Routes */}

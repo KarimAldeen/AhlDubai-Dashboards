@@ -7,13 +7,13 @@ import ViewPage from '../../../Layout/Dashboard/ViewPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
-import { useAddDoctors } from '../../../api/Doctors';
+import { useAddPartners } from '../../../api/Partners';
 import Form from './AddForm';
 
-const AddDoctorsPage = () => {
+const AddPartnersPage = () => {
     
 
-    const {mutate , isLoading , isSuccess} = useAddDoctors()
+    const {mutate , isLoading , isSuccess} = useAddPartners()
   const handleSubmit = (values:any)=>{
       console.log(values,"values");
       
@@ -23,7 +23,7 @@ const AddDoctorsPage = () => {
   }
   const {t} = useTranslation();
 
-  useNavigateOnSuccess(isSuccess , '/Doctors'  )
+  useNavigateOnSuccess(isSuccess , '/Partners'  )
   
 
 
@@ -55,4 +55,4 @@ const AddDoctorsPage = () => {
 
 }
 
-export default AddDoctorsPage
+export default AddPartnersPage

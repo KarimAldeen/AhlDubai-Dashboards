@@ -6,6 +6,7 @@ import ColumnsImage from "../../Components/Columns/ColumnsImage";
 import { useNavigate } from "react-router-dom";
 import { useDeletePartners } from "../../api/Partners";
 import { usePageState } from "../../lib/state mangment/LayoutPagestate";
+import { convert_language_array_to_local } from "../../utils/language/ConvertObjectToLocalLanguage";
 
 function fnDelete(props :any ){}
 
@@ -16,7 +17,7 @@ const useTableColumns :any = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   function handelEdit(row:any){
     setObjectToEdit(row)
-    navigate(`/Partners/${row.id}`)
+     navigate(`edit`)
   }
 
   return useMemo(
@@ -26,7 +27,8 @@ const useTableColumns :any = () => {
         name: t("title"),
         sortable: false,
         center: "true",
-        cell: (row:any) => row?.title
+        
+        cell: (row:any) =>  convert_language_array_to_local(row?.language, "title")
       },
       {
         name: t("image"),
@@ -35,7 +37,6 @@ const useTableColumns :any = () => {
        
         cell: (row:any) =>  {
           let str = row?.image;
-          str =  str?.replace(`public`, "/storage") ?? ""; 
           return <ColumnsImage src={str} />
         }
       },
