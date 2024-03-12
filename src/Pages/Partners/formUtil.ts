@@ -22,7 +22,7 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
   const initialValues: any = {
     id: objectToEdit?.id ?? 0,
     image: objectToEdit?.image ?? '',
-    // ...langauge_initial_values_genrater(["name","type","description"],objectToEdit) ,
+    ...langauge_initial_values_genrater(["name","type","description"],objectToEdit) ,
 
 
   };

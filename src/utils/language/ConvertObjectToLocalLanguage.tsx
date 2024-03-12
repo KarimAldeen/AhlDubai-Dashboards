@@ -17,24 +17,29 @@ const fakeArray: any[] = [
 
 export const convert_language_array_to_local = (array: any[], field: string): string[] => {
     const language: string = localStorage.getItem("language") || "en";
-
+        console.log(array,"array");
+        
     return array
-        .filter(item => item.local === language)
-        .map(item => {
+        ?.filter(item => item.local === language)
+        ?.map(item => {
             const value = item[field];
             return value !== undefined ? value : null;
         });
 }
 
 
-export const convert_language_array_to_field = (array: any[], field: string,language:string): string[] => {
+export const convert_language_array_to_field = (array: any[], field: string, language: string): string[] => {
+    // Check if array is defined and is an array
+    if (!Array.isArray(array)) {
+        console.error('Invalid input: array is not an array.');
+        return [];
+    }
 
+    // Filter and map only if array is valid
     return array
-        .filter(item => item.local === language)
+        .filter(item => typeof item === 'object' && item.local === language) // Only objects with the 'local' property matching the specified language
         .map(item => {
             const value = item[field];
             return value !== undefined ? value : null;
         });
 }
-
-console.log(convert_language_array_to_field(fakeArray, "name","ar")); 
