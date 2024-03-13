@@ -1,23 +1,27 @@
-import { langauge_validation_genrater, langauge_initial_values_genrater } from '../../Hooks/useLanguageGenrater';
+import { langauge_validation_genrater, langauge_initial_values_genrater } from '../../../../Hooks/useLanguageGenrater';
 
 import * as Yup from "yup";
-import { buildFormData } from "../../api/helper/buildFormData";
+import { buildFormData } from "../../../../api/helper/buildFormData";
 
+interface formUtilCommon {
+  number:number,
+  value:number 
+}
+
+interface ObjectToEdit extends formUtilCommon {
+
+    id?:number,
+
+}
 
 
 export const getInitialValues = (objectToEdit: any | null = null): any => {
 
   // Initialize the initial values object
-  
   const initialValues: any = {
     id: objectToEdit?.id ?? null,
-    sub_service_id: objectToEdit?.id ?? null,
-    whatsapp_view: objectToEdit?.whatsapp_view ?? '',
-    price: objectToEdit?.price ?? '',
-    
-
+    service_benefit_id: objectToEdit?.id ?? null,
     ...langauge_initial_values_genrater(["name"],objectToEdit) ,
-
 
   };
 
@@ -29,8 +33,7 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
 export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> => {
   // Validate input
   return Yup.object().shape({
-    price: Yup.string().required('Required'),
-    whatsapp_view: Yup.string().required('Required'),
+    service_id: Yup.string().required('Required'),
     ...langauge_validation_genrater(["name"]) 
   });
 };

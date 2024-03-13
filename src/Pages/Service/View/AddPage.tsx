@@ -9,15 +9,21 @@ import { BsInfoCircle } from 'react-icons/bs';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddService } from '../../../api/Service';
 import Form from './AddForm';
+import { useParams } from 'react-router-dom';
 
 const AddServicePage = () => {
     
 
     const {mutate , isLoading , isSuccess} = useAddService()
+    const {id} = useParams()
+
   const handleSubmit = (values:any)=>{
       console.log(values,"values");
       
-    mutate(values)  
+      
+      return mutate(getDataToSend({
+        ...values
+      }));
    
     
   }

@@ -9,21 +9,26 @@ import { BsInfoCircle } from 'react-icons/bs';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddBenefit } from '../../../api/benefit';
 import Form from './AddForm';
+import { useParams } from 'react-router-dom';
 
 const AddBenefitPage = () => {
     
 
     const {mutate , isLoading , isSuccess} = useAddBenefit()
+    const {id} = useParams()
   const handleSubmit = (values:any)=>{
       console.log(values,"values");
       
-    mutate(values)  
+      return mutate(getDataToSend({
+        ...values ,
+        service_id:id
+      }));
    
     
   }
   const {t} = useTranslation();
 
-  useNavigateOnSuccess(isSuccess , '/benefit'  )
+  useNavigateOnSuccess(isSuccess , '/service'  )
   
 
 

@@ -14,16 +14,19 @@ import { BsInfoCircle } from 'react-icons/bs';
 import {  useUpdateSubService } from '../../../api/subServices';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
+import Banner from '../Banner/Banner';
+import Benefit from '../Benfit/Benfit';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
   const {mutate ,isSuccess} = useUpdateSubService()
+  const {id} = useParams()
   const handleSubmit = (values:any)=>{
   
     return mutate(getDataToSend({
       ...values ,
-      sub_service_id:objectToEdit?.id
+      service_id:id
     }));
 
   }
@@ -46,16 +49,23 @@ const EditPage = () => {
     <div className='ViewPage'>
       {objectToEdit ?
         <ViewPage {...ViewProps}>
-          <Tabs>
+            <Tabs>
             <TabList>
               <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("BasicInfo")}</h6></div></Tab>
+              <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("Banner")}</h6></div></Tab>
+              <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("Benefit")}</h6></div></Tab>
 
             </TabList>
             <TabBody >
               <div className=" mt-4"><Form /></div>
             </TabBody>
          
-    
+            <TabBody >
+              <div className=" mt-4"><Banner /></div>
+            </TabBody>
+            <TabBody >
+              <div className=" mt-4"><Benefit /></div>
+            </TabBody>
           </Tabs>
         </ViewPage>
         : <LoadingPage />}

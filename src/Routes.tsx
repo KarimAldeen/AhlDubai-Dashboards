@@ -212,7 +212,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     //     href: "/service/sub",
     // },
     {
-        href: "/service/:id/sub/:id",
+        href: "/service/:id/sub/:sub_id",
         element: <EditSubService />,
         hidden: true
     },
@@ -228,7 +228,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     //     href: "/service/benefit",
     // },
     {
-        href: "/service/:id/benefit/:id",
+        href: "/service/:id/benefit/:benefit_id",
         element: <EditServiceBenefit />,
         hidden: true
     },

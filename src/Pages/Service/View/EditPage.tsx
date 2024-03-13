@@ -21,6 +21,7 @@ const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
   const {mutate ,isSuccess} = useUpdateService()
+  const {id} = useParams()
   const handleSubmit = (values:any)=>{
   
     const newData = {} as any;
@@ -28,8 +29,7 @@ const EditPage = () => {
     
     
     return mutate(getDataToSend({
-      ...values,
-      service_id:objectToEdit?.id
+      ...values
     }));
   }
 

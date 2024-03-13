@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { getInitialValues, getDataToSend } from '../formUtil'
+import { getInitialValues, getDataToSend } from './formUtil'
 import { Tab, TabList, TabPanel as TabBody, Tabs } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css';
 import { MdLanguage } from 'react-icons/md'
 import { FaSadCry } from 'react-icons/fa'
-import ViewPage from '../../../Layout/Dashboard/ViewPage';
+import ViewPage from '../../../../Layout/Dashboard/ViewPage';
 import { Rate } from 'antd';
-import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
+import { usePageState } from '../../../../lib/state mangment/LayoutPagestate';
 import { useParams } from 'react-router-dom';
-import LoadingPage from '../../../Layout/app/LoadingPage';
+import LoadingPage from '../../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import {  useUpdateBenefit } from '../../../api/benefit';
-import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
+import {  useUpdateBenefit } from '../../../../api/benefit';
+import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
 
 const EditPage = () => {

@@ -21,7 +21,7 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
   // Initialize the initial values object
   const initialValues: any = {
     id: objectToEdit?.id ?? null,
-    service_id: objectToEdit?.service_id ?? null,
+    service_benefit_id: objectToEdit?.id ?? null,
     ...langauge_initial_values_genrater(["name"],objectToEdit) ,
 
   };
