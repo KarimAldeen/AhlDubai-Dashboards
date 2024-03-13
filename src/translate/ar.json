@@ -36,12 +36,19 @@
   "whatsapp_click_date": "تاريخ النقرة على زر واتساب",
   "join_website_date": "تاريخ الانضمام إلى الموقع",
   "last_users": "آخر المستخدمين",
-    "Partners": "شركاء",
-    "Doctors": "الأطباء",
-    "SocialMedia": "وسائل التواصل الاجتماعي",
-    "HeroSection": "قسم البطل",
-    "PatientSay": "رأي المريض",
-    "WebsiteInfo": "معلومات الموقع",
-    "Service": "الخدمة"
+  "Partners": "شركاء",
+  "Doctors": "الأطباء",
+  "SocialMedia": "وسائل التواصل الاجتماعي",
+  "HeroSection": "قسم البطل",
+  "PatientSay": "رأي المريض",
+  "WebsiteInfo": "معلومات الموقع",
+  "Service": "الخدمة",
+  "image":"الصورة",
+  "View_information": "عرض المعلومات",
+    "BasicInfo": "المعلومات الأساسية",
+    "name": "الاسم",
+    "en": "انكليزي",
+    "type": "النوع",
+    "description": "الوصف"
 
 }

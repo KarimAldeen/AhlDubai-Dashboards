@@ -42,7 +42,18 @@
   "HeroSection":"HeroSection",
   "PatientSay":"PatientSay",
   "WebsiteInfo":"WebsiteInfo",
-  "Service":"Service"
+  "Service":"Service",
+  "image":"Image",
+  "View_information":"View Information",
+  "BasicInfo":"Basic Info",
+  "name":"Name",
+  "en":"en",
+  "type":"Type",
+  "description":"Description",
+  "social_media_image":"Social Media Image",
+  "social_media_link":"social Media Link",
+  "title":"Title",
+  "back":"Back"
 
 
 

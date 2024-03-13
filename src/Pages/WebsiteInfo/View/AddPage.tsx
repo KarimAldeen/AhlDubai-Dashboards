@@ -24,7 +24,7 @@ const AddDoctorsPage = () => {
   }
   const {t} = useTranslation();
 
-  useNavigateOnSuccess(isSuccess , '/nde'  )
+  useNavigateOnSuccess(isSuccess , '/website_info'  )
   
 
 

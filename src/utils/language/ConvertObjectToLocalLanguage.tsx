@@ -18,7 +18,6 @@ const fakeArray: any[] = [
 export const convert_language_array_to_local = (array: any[], field: string): string => {
     const language: string = localStorage.getItem("language") || "en";
 
-    console.log(array.length);
     
     if(!Array.isArray(array)){
         return ""
@@ -30,8 +29,14 @@ export const convert_language_array_to_local = (array: any[], field: string): st
         console.log(array,"array");
         console.log(language);
         
-    return array
-        ?.find(item => item.locale === language)[field]
+    const object = array?.find(item => item.locale === language)
+
+    if(!object){
+        return  ""
+    }
+
+
+    return object[field]
        
 }
 
