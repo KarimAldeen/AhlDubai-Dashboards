@@ -5,14 +5,15 @@ import { QueryStatusEnum } from '../../../config/QueryStatus';
 import LyTable from '../../../Layout/Dashboard/LyTable';
 import useTableColumns from './useTableColumn';
 import { useGetBenefit } from '../../../api/benefit';
+import { useGetSubBenefit } from '../../../api/subBenefit';
 import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
-import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import { useNavigate } from 'react-router-dom';
+import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
 
-function ServiceBenefit() {
+function Benefit() {
 
-  const { data, status } = useGetBenefit();
+  const { data, status } = useGetSubBenefit();
 
   const columns = useTableColumns()
   console.log(data);
@@ -26,13 +27,15 @@ function ServiceBenefit() {
   return (
 
     <DashBody status={status as QueryStatusEnum}>
-      <DashHeader showAddButton={false} title={'Service'}>
-        <div className='RightSide d-flex gap-2 align-center '>
-          {/* <SearchField searchBy={"title"} /> */}
+        <DashHeader showAddButton={false} title={'Service'}>
+      <div className='RightSide d-flex gap-2 align-center '>
+     {/* <SearchField searchBy={"title"} /> */}
 
-          <AddButton onClick={() => handelAdd}></AddButton>
-        </div>
+     <AddButton  onClick={()=>handelAdd}></AddButton>
+     
+     </div>
       </DashHeader>
+     
       <LyTable
 
         data={data}
@@ -43,4 +46,4 @@ function ServiceBenefit() {
   )
 }
 
-export default ServiceBenefit
+export default Benefit

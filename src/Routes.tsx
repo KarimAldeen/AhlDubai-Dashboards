@@ -37,22 +37,7 @@ import AddPartnersPage from "./Pages/Partners/View/AddPage";
 import EditPartners  from "./Pages/Partners/View/EditPage";
 
 
-import ServicePage from "./Pages/Service/Page";
-import AddServicePage from "./Pages/Service/View/AddPage";
-import EditService  from "./Pages/Service/View/EditPage";
 
-
-import ServiceBenefitPage from "./Pages/ServiceBenefit/Page";
-import AddServiceBenefitPage from "./Pages/ServiceBenefit/View/AddPage";
-import EditServiceBenefit  from "./Pages/ServiceBenefit/View/EditPage";
-  
-
-
-import SubServicePage from "./Pages/SubService/Page";
-import AddSubServicePage from "./Pages/SubService/View/AddPage";
-import EditSubService  from "./Pages/SubService/View/EditPage";
-  
-  
 
 //socialmeida
 import SocialMediaPage from "./Pages/SocialMedia/Page";
@@ -87,6 +72,27 @@ import EditSubServiceBanner from "./Pages/SubService/Banner/View/EditPage";
 import AddSubServiceBenfit from "./Pages/SubService/Benfit/View/AddPage";
 import EditSubServiceBenfit from "./Pages/SubService/Benfit/View/EditPage";
 
+
+
+import AddSubServiceSubBenfit from "./Pages/SubService/SubBenfit/View/AddPage";
+import EditSubServiceSubBenfit from "./Pages/SubService/SubBenfit/View/EditPage";
+
+import ServicePage from "./Pages/Service/Page";
+import AddServicePage from "./Pages/Service/View/AddPage";
+import EditService  from "./Pages/Service/View/EditPage";
+
+
+import ServiceBenefitPage from "./Pages/ServiceBenefit/Page";
+import AddServiceBenefitPage from "./Pages/ServiceBenefit/View/AddPage";
+import EditServiceBenefit  from "./Pages/ServiceBenefit/View/EditPage";
+  
+
+
+import SubServicePage from "./Pages/SubService/Page";
+import AddSubServicePage from "./Pages/SubService/View/AddPage";
+import EditSubService  from "./Pages/SubService/View/EditPage";
+  
+  
 
 
 
@@ -258,7 +264,7 @@ export const RoutesLinks: RoutesLinksType[] = [
         hidden: true
     },
     {
-        href: "/service/sub/add",
+        href: "/service/:id/sub/add",
         element: <AddSubServicePage />,
         hidden: true
     },
@@ -280,6 +286,16 @@ export const RoutesLinks: RoutesLinksType[] = [
     {
         href: "/service/:id/sub/:sub_id/benefit/:benefit_id",
         element: <EditSubServiceBenfit />,
+        hidden: true
+    },
+    {
+        href: "/service/:id/sub/:sub_id/benefit/sub/add",
+        element: <AddSubServiceSubBenfit />,
+        hidden: true
+    },
+    {
+        href: "/service/:id/sub/:sub_id/benefit/:benefit_id/sub/:sub_benefit_id",
+        element: <EditSubServiceSubBenfit />,
         hidden: true
     },
    

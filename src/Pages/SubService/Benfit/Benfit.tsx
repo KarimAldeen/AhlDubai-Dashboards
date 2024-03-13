@@ -6,6 +6,10 @@ import LyTable from '../../../Layout/Dashboard/LyTable';
 import useTableColumns from './useTableColumn';
 import { useGetBenefit } from '../../../api/benefit';
 import { useGetSubBenefit } from '../../../api/subBenefit';
+import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
+import { useNavigate } from 'react-router-dom';
+import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import DashHeader from '../../../Layout/Dashboard/DashHeader';
 
 function Benefit() {
 
@@ -13,10 +17,23 @@ function Benefit() {
 
     const columns  = useTableColumns()
     console.log(data);
+    const { setObjectToEdit, objectToEdit } = usePageState()
+    const navigate = useNavigate()
+    function handelAdd(){
+      // setObjectToEdit(null)
+      // navigate('add')
+    } 
     
   return (
 
     <DashBody status={status as QueryStatusEnum}>
+        <DashHeader showAddButton={false} title={'Service'}>
+      <div className='RightSide d-flex gap-2 align-center '>
+     {/* <SearchField searchBy={"title"} /> */}
+
+     <AddButton  onClick={()=>handelAdd}></AddButton>
+     </div>
+      </DashHeader>
 
         <LyTable
 

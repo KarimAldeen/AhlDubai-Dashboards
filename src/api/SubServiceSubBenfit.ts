@@ -1,0 +1,21 @@
+
+import useGetQueryPagination from "./helper/ueGetPagination";
+import useAddMutation from "./helper/useAddMutation"
+import useDeleteMutation from "./helper/useDeleteMutation"
+import useUpdateMutation from "./helper/useUpdateMutation";
+  
+const API = {
+  ADD: `service/sub/benefit/sub/add`,
+  GET_ALL: `service/sub/benefit/sub/getAll`,
+  DELETE: `service/sub/benefit/sub/delete`,
+  UPDATE: `service/sub/benefit/sub/update`,
+
+};
+const KEY = "service/benefit"
+
+
+export const useGetSubServiceSubBenefit = (params?:any) => useGetQueryPagination(KEY, API.GET_ALL,params);
+export const useAddSubServiceSubBenefit = () => useAddMutation(KEY, API.ADD);
+export const useUpdateSubServiceSubBenefit = () => useUpdateMutation(KEY, API.UPDATE);
+
+export const useDeleteSubServiceSubBenefit = () =>useDeleteMutation(KEY, API.DELETE);

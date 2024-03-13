@@ -12,6 +12,7 @@ import { useGetPartners } from '../../api/Partners'
 import SearchField from '../../Layout/Dashboard/SearchField'
 import { useGetDoctors } from '../../api/Doctors'
 import { useGetPatientSay } from '../../api/PatientSay'
+import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
 
  function Page() {
 
@@ -20,7 +21,12 @@ import { useGetPatientSay } from '../../api/PatientSay'
     const [t] = useTranslation()
     const navigate = useNavigate()
     console.log(data);
-    
+    const { setObjectToEdit, objectToEdit } = usePageState()
+
+    function handelAdd(){
+      setObjectToEdit(null)
+      navigate('add')
+    } 
     
   return (
     // Pass Status to Layout 

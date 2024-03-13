@@ -14,7 +14,6 @@ import { BsInfoCircle } from 'react-icons/bs';
 import {  useUpdateBenefit } from '../../../../api/benefit';
 import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
-import Benefit from '../../SubBenfit/Benfit';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
@@ -52,19 +51,12 @@ const EditPage = () => {
          <Tabs>
             <TabList>
               <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("BasicInfo")}</h6></div></Tab>
-              <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("SubBenefit")}</h6></div></Tab>
 
             </TabList>
             <TabBody >
               <div className=" mt-4"><Form /></div>
-
+        
             </TabBody>
-            <TabBody >
-            <div className=" mt-4"><Benefit /></div>
-
-            </TabBody>
-
-
           </Tabs>
         </ViewPage>
         : <LoadingPage />}

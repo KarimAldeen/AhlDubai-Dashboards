@@ -21,6 +21,8 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
   // Initialize the initial values object
   const initialValues: any = {
     id: objectToEdit?.id ?? 0,
+    service_id: objectToEdit?.id ?? 0,
+
     image: objectToEdit?.image ?? '',
     sub_image: objectToEdit?.sub_image ?? '',
 

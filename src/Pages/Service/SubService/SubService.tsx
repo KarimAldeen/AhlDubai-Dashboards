@@ -7,20 +7,25 @@ import useTableColumns from './useTableColumn';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import { useNavigate } from 'react-router-dom';
+import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
 
 function SubService() {
 
     const {data , status} = useGetSubService();
 
     const columns  = useTableColumns()
-    console.log(data);
     
     const navigate = useNavigate()
+    const { setObjectToEdit, objectToEdit } = usePageState()
 
+    function handelAdd(){
+      setObjectToEdit(null)
+      navigate('add')
+    } 
   return (
 
     <DashBody status={status as QueryStatusEnum}>
- <DashHeader showAddButton={false} title={'Service'}>
+ <DashHeader showAddButton={false} title={'SubService'}>
       <div className='RightSide d-flex gap-2 align-center '>
 
      <AddButton  onClick={()=>navigate('/service/sub/add')}></AddButton>
