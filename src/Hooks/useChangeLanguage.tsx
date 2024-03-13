@@ -80,11 +80,11 @@ export function useLanguageMenu() {
   const { t } = useTranslation();
 
   const languageOptions = [
-    { code: 'ar', icon: '/Layout/Ar.svg', label: t('Arabic') },
-    { code: 'en', icon: '/Layout/En.svg', label: t('English') },
-    { code: 'de', icon: '/Layout/De.svg', label: t('German') },
-    { code: 'tr', icon: '/Layout/Tr.svg', label: t('Turkish') },
-    { code: 'ru', icon: '/Layout/Ru.svg', label: t('Russian') } 
+    { code: 'ar', icon: '/language/ar.svg', label: t('Arabic') },
+    { code: 'en', icon: '/language/en.svg', label: t('English') },
+    { code: 'de', icon: '/language/de.svg', label: t('German') },
+    { code: 'tr', icon: '/language/tr.svg', label: t('Turkish') },
+    { code: 'ru', icon: '/language/ru.svg', label: t('Russian') } 
   ];
 
   return { languageOptions };

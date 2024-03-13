@@ -24,7 +24,26 @@
   "delete_are_you_sure": "Are you sure you want to delete?",
   "yes_delete_it": "Yes, delete it",
   "cancel": "Cancel",
-  "required_error":"required_error"
+  "required_error":"required_error",
+  "You_have":"You have",
+  "doctor_in_your_Application":"Doctor in your Application",
+  "service_in_your_Application":"Service in your Application",
+  "patient_in_your_Application":"Patient Say in your Application",
+  "user_visit_website_count":"User Visit The Website",
+  "user_whatsapp_click_count" :"User Click Whatsapp Button",
+  "no_records":"No Records",
+  "latest_user_click_whatsapp":"latest User Click On whatsapp Button",
+  "whatsapp_click_date":"Whatsapp Click Date",
+  "join_website_date":"Join Website Date",
+  "last_users":"Last Users",
+  "Partners":"Partners",
+  "Doctors":"Doctorss",
+  "SocialMedia":"SocialMedia",
+  "HeroSection":"HeroSection",
+  "PatientSay":"PatientSay",
+  "WebsiteInfo":"WebsiteInfo",
+  "Service":"Service"
+
 
 
 }
