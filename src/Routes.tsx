@@ -51,6 +51,17 @@ import EditSubService  from "./Pages/SubService/View/EditPage";
   
   
 
+//socialmeida
+import SocialMediaPage from "./Pages/SocialMedia/Page";
+import AddSocialMedia from "./Pages/SocialMedia/View/AddPage";
+import EditSocialMedia  from "./Pages/SocialMedia/View/EditPage";
+
+
+//hero_section
+import HeroSectionPage from "./Pages/HeroSection/Page";
+import AddHeroSection from "./Pages/HeroSection/View/AddPage";
+import EditHeroSection  from "./Pages/HeroSection/View/EditPage";
+
 
 // import SliderPage from "./Pages/Slider/Page";
 // import AddSliderPage from "./Pages/Slider/View/AddPage";
@@ -104,6 +115,39 @@ export const RoutesLinks: RoutesLinksType[] = [
     {
         href: "/doctors/add",
         element: <AddDoctorsPage />,
+        hidden: true
+    },
+    {
+        name: "SocialMedia",
+        element: <SocialMediaPage />,
+        icon: <FaProductHunt />,
+        href: "/socialmedia",
+    },
+    {
+        href: "/socialmedia/edit",
+        element: <EditSocialMedia />,
+        hidden: true
+    },
+    {
+        href: "/socialmedia/add",
+        element: <AddSocialMedia />,
+        hidden: true
+    },
+    //hero section
+    {
+        name: "HeroSection",
+        element: <HeroSectionPage />,
+        icon: <FaProductHunt />,
+        href: "/herosection",
+    },
+    {
+        href: "/herosection/edit",
+        element: <EditHeroSection />,
+        hidden: true
+    },
+    {
+        href: "/herosection/add",
+        element: <AddHeroSection />,
         hidden: true
     },
     // {
