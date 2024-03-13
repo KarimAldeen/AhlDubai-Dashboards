@@ -8,12 +8,13 @@ import { useDeletePartners } from "../../api/Partners";
 import { usePageState } from "../../lib/state mangment/LayoutPagestate";
 import { convert_language_array_to_local } from "../../utils/language/ConvertObjectToLocalLanguage";
 import { useDeleteDoctors } from "../../api/Doctors";
+import { useDeletePatientSay } from "../../api/PatientSay";
 
 function fnDelete(props :any ){}
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
-  const deleteMutation = useDeleteDoctors()
+  const deleteMutation = useDeletePatientSay()
   const navigate = useNavigate()
   const { setObjectToEdit, objectToEdit } = usePageState()
   function handelEdit(row:any){
@@ -56,7 +57,7 @@ const useTableColumns :any = () => {
             onEdit={()=> handelEdit(row) }
             showView={false}
             showEdit={true}
-            onDelete={() => deleteMutation.mutate({ doctor_id: row.id })}
+            onDelete={() => deleteMutation.mutate({ patients_say_id: row.id })}
           />
         ),
       },

@@ -11,16 +11,16 @@ import AddButton from '../../Layout/Dashboard/AddButton/AddButton'
 import { useGetPartners } from '../../api/Partners'
 import SearchField from '../../Layout/Dashboard/SearchField'
 import { useGetDoctors } from '../../api/Doctors'
+import { useGetPatientSay } from '../../api/PatientSay'
 
  function Page() {
 
-    const column   =useTableColumns()
-    const {data  ,status } = useGetDoctors()
+    const column   =useTableColumns ()
+    const {data  ,status } = useGetPatientSay()
     const [t] = useTranslation()
     const navigate = useNavigate()
     console.log(data);
     
-    const totalRows = data?.pagination?.total;
     
   return (
     // Pass Status to Layout 
@@ -34,11 +34,11 @@ import { useGetDoctors } from '../../api/Doctors'
       </DashHeader>
       
       <LyTable
-        data={data?.data}
+        data={data}
         isLoading={false}
         columns={column}
-        total={totalRows }
-        is_pagination={true}
+        
+        is_pagination={false}
     />
       
     

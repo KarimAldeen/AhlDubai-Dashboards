@@ -9,11 +9,12 @@ import { BsInfoCircle } from 'react-icons/bs';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddDoctors } from '../../../api/Doctors';
 import Form from './AddForm';
+import { useAddPatientSay } from '../../../api/PatientSay';
 
 const AddDoctorsPage = () => {
     
 
-    const {mutate , isLoading , isSuccess} = useAddDoctors()
+    const {mutate , isLoading , isSuccess} = useAddPatientSay()
   const handleSubmit = (values:any)=>{
       console.log(values,"values");
       
@@ -23,7 +24,7 @@ const AddDoctorsPage = () => {
   }
   const {t} = useTranslation();
 
-  useNavigateOnSuccess(isSuccess , '/Doctors'  )
+  useNavigateOnSuccess(isSuccess , '/patient_say'  )
   
 
 
