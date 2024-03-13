@@ -11,6 +11,7 @@ import AddButton from '../../Layout/Dashboard/AddButton/AddButton'
 import { useGetPartners } from '../../api/Partners'
 import SearchField from '../../Layout/Dashboard/SearchField'
 import { useGetDoctors } from '../../api/Doctors'
+import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
 
  function Page() {
 
@@ -20,6 +21,12 @@ import { useGetDoctors } from '../../api/Doctors'
     const navigate = useNavigate()
     
     const totalRows = data?.pagination?.total;
+    const { setObjectToEdit, objectToEdit } = usePageState()
+
+    function handelAdd(){
+      setObjectToEdit(null)
+      navigate('add')
+    } 
     
   return (
     // Pass Status to Layout 
@@ -28,7 +35,7 @@ import { useGetDoctors } from '../../api/Doctors'
       <div className='RightSide d-flex gap-2 align-center '>
      {/* <SearchField searchBy={"title"} /> */}
 
-     <AddButton  onClick={()=>navigate('add')}></AddButton>
+     <AddButton  onClick={()=>handelAdd}></AddButton>
      </div>
       </DashHeader>
       

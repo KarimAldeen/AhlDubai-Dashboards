@@ -20,7 +20,8 @@ import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
     const navigate = useNavigate()
     const { setObjectToEdit} = usePageState()
     const totalRows = data?.pagination?.total;
-    
+
+   
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
