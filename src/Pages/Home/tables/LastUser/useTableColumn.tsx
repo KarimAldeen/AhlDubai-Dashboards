@@ -19,37 +19,28 @@ const useTableColumns = () => {
 
     return useMemo(() => {
         const columns = [
+             
             {
-                name: t("full_name"),
+                name: t("id"),
                 sortable: false,
                 center: true,
-                cell: (row: RowData) => row?.name,
+                cell:(row:any)=>{
+                    
+                    return (row?.id)
+                }
+
             },
             {
-                name: t("email"),
+                name: t("join_website_date"),
                 sortable: false,
                 center: true,
-                cell: (row: RowData) => row?.email,
+                cell:(row:any)=>{
+                    console.log(row);
+                    
+                    return (row?.created_at)
+                }
+
             },
-            {
-                name: t("phone"),
-                sortable: false,
-                center: true,
-                cell: (row: RowData) => row?.phone,
-            },
-            //          {
-            //     name: "#",
-            //     selector: "action",
-            //     sortable: false,
-            //     center: true,
-            //     cell: (row: RowData) => (
-            //         <GrView
-            //             onClick={() => navigate(`/user/${row?.id}`, {replace:true})}
-            //             size={22}
-            //             style={{ cursor: "pointer" }}
-            //         />
-            //     ),
-            // },
         ];
 
         return columns;
