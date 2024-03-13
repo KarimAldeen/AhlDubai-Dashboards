@@ -295,7 +295,9 @@ background: var(--bg);
                 border-top: none; border-left: none; border-right: none;
                 border-bottom: 4px solid var(--primary);
                 color: var(--primary);
-                background: var(--bg2);
+                // transition: .3s ease-in-out all;
+                // background: var(--bg2);
+                
     
             }
            
@@ -310,7 +312,7 @@ background: var(--bg);
                 border-bottom: 4px solid var(--primary);
                 color: var(--primary);
                 z-index: 99999;
-                background: var(--bg2);
+                // background: var(--bg2);
                   min-width: 100px;
 
                 flex: 1;

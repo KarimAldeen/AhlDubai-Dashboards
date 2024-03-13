@@ -23,7 +23,8 @@
     className?: string;
     isDisabled?: boolean;
     onChange?: (value: any) => void;
-    dir?:'ltr' | "rtl"
+    dir?:'ltr' | "rtl",
+    label2?:string
   }
   
   export interface ValidationFieldPropsSelect {

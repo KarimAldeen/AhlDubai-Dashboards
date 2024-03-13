@@ -27,7 +27,6 @@ import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
     <DashBody status={status as QueryStatusEnum} >
       <DashHeader showAddButton={false} title={'Partners'}>
       <div className='RightSide d-flex gap-2 align-center '>
-     <SearchField searchBy={"title"} />
 
      <AddButton  onClick={()=>{
       setObjectToEdit(null)
