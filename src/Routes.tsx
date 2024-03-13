@@ -1,10 +1,13 @@
 import { ReactNode } from "react";
 
 // Icons Import 
-import {  FaCartArrowDown, FaHome, FaProductHunt, FaRegImages } from "react-icons/fa"
+import {  FaCartArrowDown, FaHome, FaInfo, FaProductHunt, FaRegImages, FaUser } from "react-icons/fa"
 import { BiSolidCategory } from "react-icons/bi";
 import { BiSolidCoupon } from "react-icons/bi";
 
+import { IoShareSocial } from "react-icons/io5";
+import { PiFlagBanner } from "react-icons/pi";
+import { FaUserDoctor } from "react-icons/fa6";
 
 // Pages Import
 
@@ -69,6 +72,12 @@ import AddPatientSay from "./Pages/PatientSay/View/AddPage";
 import EditPatientSay  from "./Pages/PatientSay/View/EditPage";
 
 
+
+//website info 
+import WebsiteInfoPage from "./Pages/WebsiteInfo/Page";
+import AddWebsiteInfo from "./Pages/WebsiteInfo/View/AddPage";
+import EditWebsteInfo  from "./Pages/WebsiteInfo/View/EditPage";
+
 // import SliderPage from "./Pages/Slider/Page";
 // import AddSliderPage from "./Pages/Slider/View/AddPage";
 // import EditSlider  from "./Pages/Slider/View/EditPage";
@@ -110,7 +119,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     {
         name: "Doctors",
         element: <DoctorsPage />,
-        icon: <FaProductHunt />,
+        icon: <FaUserDoctor />,
         href: "/doctors",
     },
     {
@@ -126,7 +135,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     {
         name: "SocialMedia",
         element: <SocialMediaPage />,
-        icon: <FaProductHunt />,
+        icon: <IoShareSocial />,
         href: "/socialmedia",
     },
     {
@@ -143,7 +152,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     {
         name: "HeroSection",
         element: <HeroSectionPage />,
-        icon: <FaProductHunt />,
+        icon: <PiFlagBanner />,
         href: "/herosection",
     },
     {
@@ -173,6 +182,25 @@ export const RoutesLinks: RoutesLinksType[] = [
         element: <AddPatientSay />,
         hidden: true
     },
+    //Website Info 
+
+    {
+        name: "WebsiteInfo",
+        element: <WebsiteInfoPage />,
+        icon: <FaInfo />,
+        href: "/website_info",
+    },
+    {
+        href: "/website_info/edit",
+        element: <EditWebsteInfo />,
+        hidden: true
+    },
+    {
+        href: "/website_info/add",
+        element: <AddWebsiteInfo />,
+        hidden: true
+    },
+
     // {
     //     name: "Blog",
     //     element: <BlogPage />,

@@ -8,13 +8,13 @@ import { useDeletePartners } from "../../api/Partners";
 import { usePageState } from "../../lib/state mangment/LayoutPagestate";
 import { convert_language_array_to_local } from "../../utils/language/ConvertObjectToLocalLanguage";
 import { useDeleteDoctors } from "../../api/Doctors";
-import { useDeletePatientSay } from "../../api/PatientSay";
+import { useDeleteWebsiteInfo } from "../../api/WebsiteInfo";
 
 function fnDelete(props :any ){}
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
-  const deleteMutation = useDeletePatientSay()
+  const deleteMutation = useDeleteWebsiteInfo()
   const navigate = useNavigate()
   const { setObjectToEdit, objectToEdit } = usePageState()
   function handelEdit(row:any){
@@ -24,28 +24,28 @@ const useTableColumns :any = () => {
 
   return useMemo(
     () => [
+      {
+        name: t("key"),
+        sortable: false,
+        center: "true",
+       
+        cell: (row:any) =>  {
+          return row?.key
+        }
+      },
  
       {
-        name: t("name"),
+        name: t("value"),
         sortable: false,
         center: "true",
         
         cell: (row:any) =>  {
 
-         return  (convert_language_array_to_local(row?.translations, "name"));
+         return  (convert_language_array_to_local(row?.translations, "value"));
           
         }
       },
-      {
-        name: t("image"),
-        sortable: false,
-        center: "true",
-       
-        cell: (row:any) =>  {
-          let str = row?.image;
-          return <ColumnsImage src={str} />
-        }
-      },
+    
       {
         name: "#",
         sortable: false,
@@ -57,7 +57,7 @@ const useTableColumns :any = () => {
             onEdit={()=> handelEdit(row) }
             showView={false}
             showEdit={true}
-            onDelete={() => deleteMutation.mutate({ patients_say_id: row.id })}
+            onDelete={() => deleteMutation.mutate({ websiteinfo_id: row.id })}
           />
         ),
       },

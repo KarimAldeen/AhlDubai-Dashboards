@@ -14,12 +14,12 @@ import { BsInfoCircle } from 'react-icons/bs';
 import {  useUpdateDoctors } from '../../../api/Doctors';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
-import { useUpdatePatientSay } from '../../../api/PatientSay';
+import { useUpdateWebsiteInfo } from '../../../api/WebsiteInfo';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
-  const {mutate ,isSuccess} = useUpdatePatientSay()
+  const {mutate ,isSuccess} = useUpdateWebsiteInfo()
 
   
   const handleSubmit = (values:any)=>{
@@ -30,11 +30,11 @@ const EditPage = () => {
     
     return mutate(getDataToSend({
       ...values ,
-      patients_say_id:objectToEdit?.id
+      websiteinfo_id:objectToEdit?.id
     }));
   }
 
-  useNavigateOnSuccess(isSuccess , '/patient_say')
+  useNavigateOnSuccess(isSuccess , '/website_info')
 
 
 
