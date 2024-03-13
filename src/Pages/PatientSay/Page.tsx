@@ -25,7 +25,7 @@ import { useGetDoctors } from '../../api/Doctors'
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader showAddButton={false} title={'Doctors'}>
+      <DashHeader showAddButton={false} title={'PatientSay'}>
       <div className='RightSide d-flex gap-2 align-center '>
      {/* <SearchField searchBy={"title"} /> */}
 
