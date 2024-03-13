@@ -13,9 +13,7 @@ import { useGetService } from '../../../../api/Service';
 function Form() {
   const formik = useFormikContext<any>();
   const [t] = useTranslation()
-  const {data} = useGetService()
-  const service_select_data = useFormatToSelect(data?.data) as any
-
+ 
 
   return (
     <Row xs={1} sm={1} md={2} lg={2} xl={2}>
@@ -26,11 +24,9 @@ function Form() {
   
     </Col>
     <Col>
-    <ValidationField name="price"  />
 
 
     </Col>
-    <ValidationField name="whatsapp_view" />
 
 
 

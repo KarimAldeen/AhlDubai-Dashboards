@@ -6,11 +6,12 @@ import { buildFormData } from "../../../../api/helper/buildFormData";
 
 
 export const getInitialValues = (objectToEdit: any | null = null): any => {
-
+    console.log(objectToEdit,"objectToEdit");
+    
   // Initialize the initial values object
   const initialValues: any = {
     id: objectToEdit?.id ?? null,
-    sub_service_id: objectToEdit?.id ?? null,
+    sub_service_benefit_id: objectToEdit?.id ?? null,
     ...langauge_initial_values_genrater(["name"],objectToEdit) ,
   };
 
@@ -18,6 +19,16 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
 };
 
 
+export const getAddInitialValues = (objectToEdit: any | null = null): any => {
+  console.log(objectToEdit,"objectToEdit");
+  
+// Initialize the initial values object
+const initialValues: any = {
+  ...langauge_initial_values_genrater(["name"],null) ,
+};
+
+return initialValues;
+};
 
 export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> => {
   // Validate input

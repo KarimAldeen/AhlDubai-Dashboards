@@ -60,7 +60,7 @@ const useTableColumns :any = () => {
 
             showView={false}
             showEdit={true}
-            onDelete={() => deleteMutation.mutate({ id: row.id })}
+            onDelete={() => deleteMutation.mutate({ sub_service_id: row.id })}
 
           />
         ),

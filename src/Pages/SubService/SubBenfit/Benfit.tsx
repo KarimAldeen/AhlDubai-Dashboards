@@ -21,17 +21,17 @@ function Benefit() {
   const navigate = useNavigate()
   function handelAdd() {
     setObjectToEdit(null)
-    navigate('add')
+    navigate('sub/add')
   }
 
   return (
 
     <DashBody status={status as QueryStatusEnum}>
-        <DashHeader showAddButton={false} title={'Service'}>
+        <DashHeader showAddButton={false} title={'sub_Benefit'}>
       <div className='RightSide d-flex gap-2 align-center '>
      {/* <SearchField searchBy={"title"} /> */}
 
-     <AddButton  onClick={()=>handelAdd}></AddButton>
+     <AddButton  onClick={()=>handelAdd()}></AddButton>
      
      </div>
       </DashHeader>

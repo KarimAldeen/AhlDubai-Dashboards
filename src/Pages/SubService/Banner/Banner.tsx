@@ -8,6 +8,7 @@ import { useGetSubBanner } from '../../../api/subBanner';
 import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
 import { useNavigate } from 'react-router-dom';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
+import DashHeader from '../../../Layout/Dashboard/DashHeader';
 
 function Banner() {
 
@@ -19,17 +20,18 @@ function Banner() {
     const navigate = useNavigate()
     function handelAdd(){
       setObjectToEdit(null)
-      navigate('add')
+      navigate('banner/add')
     } 
     
   return (
 
     <DashBody status={status as QueryStatusEnum}>
-  <div className='RightSide d-flex gap-2 align-center '>
-     {/* <SearchField searchBy={"title"} /> */}
+  <DashHeader showAddButton={false} title={'ServiceBanner'}>
+      <div className='RightSide d-flex gap-2 align-center '>
 
-     <AddButton  onClick={()=>handelAdd}></AddButton>
+     <AddButton  onClick={()=>handelAdd()}></AddButton>
      </div>
+      </DashHeader>
         <LyTable
 
         data={data}

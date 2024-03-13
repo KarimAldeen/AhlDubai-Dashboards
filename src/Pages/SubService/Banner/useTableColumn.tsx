@@ -46,10 +46,10 @@ const useTableColumns :any = () => {
           <Actions
             objectToEdit={row}
             
-            onEdit={()=> handelEdit(row) }
+            // onEdit={()=> handelEdit(row) }
             showView={false}
-            showEdit={true}
-            onDelete={() => deleteMutation.mutate({ id: row.id })}
+            showEdit={false}
+            onDelete={() => deleteMutation.mutate({ sub_service_banner_id: row.id })}
           />
         ),
       },

@@ -7,21 +7,21 @@ import ViewPage from '../../../../Layout/Dashboard/ViewPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
 import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
-import { useAddBenefit } from '../../../../api/benefit';
+import { useAddSubBanner } from '../../../../api/subBanner';
 import Form from './AddForm';
 import { useParams } from 'react-router-dom';
 
-const AddBenefitPage = () => {
+const AddBannerPage = () => {
     
 
-    const {mutate , isLoading , isSuccess} = useAddBenefit()
-    const {id} = useParams()
+    const {mutate , isLoading , isSuccess} = useAddSubBanner()
+    const {sub_id} = useParams()
   const handleSubmit = (values:any)=>{
       console.log(values,"values");
       
       return mutate(getDataToSend({
         ...values ,
-        service_id:id
+        sub_service_id:sub_id
       }));
    
     
@@ -60,4 +60,4 @@ const AddBenefitPage = () => {
 
 }
 
-export default AddBenefitPage
+export default AddBannerPage

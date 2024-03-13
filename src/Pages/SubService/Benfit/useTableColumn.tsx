@@ -7,13 +7,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import ColumnsImage from "../../../Components/Columns/ColumnsImage";
 import { convert_language_array_to_local } from "../../../utils/language/ConvertObjectToLocalLanguage";
 import Actions from "../../../Components/Ui/tables/Actions";
+import { useDeleteSubBenefit } from "../../../api/subBenefit";
 
 
 function fnDelete(props :any ){}
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
-  const deleteMutation = useDeleteSubService()
+  const deleteMutation = useDeleteSubBenefit()
   const navigate = useNavigate()
   const {id} = useParams()
   const { setObjectToEdit, objectToEdit } = usePageState()
@@ -44,7 +45,7 @@ const useTableColumns :any = () => {
             onEdit={()=> handelEdit(row) }
             showView={false}
             showEdit={true}
-            onDelete={() => deleteMutation.mutate({ id: row.id })}
+            onDelete={() => deleteMutation.mutate({ sub_service_benefit_id: row.id })}
           />
         ),
       },

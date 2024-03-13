@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom';
 import LoadingPage from '../../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import {  useUpdateBenefit } from '../../../../api/benefit';
+import {  useUpdateSubBanner } from '../../../../api/subBanner';
 import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
 
@@ -20,13 +20,12 @@ const EditPage = () => {
   const {t} = useTranslation();
   const {id} = useParams()
 
-  const {mutate ,isSuccess} = useUpdateBenefit()
+  const {mutate ,isSuccess} = useUpdateSubBanner()
   const handleSubmit = (values:any)=>{
   
 
     return mutate(getDataToSend({
       ...values ,
-      service_id:id
     }));
   }
 

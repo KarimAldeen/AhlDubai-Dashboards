@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getInitialValues, getDataToSend } from '../../formUtil'
+import { getInitialValues, getDataToSend } from './formUtil'
 import { Tab, TabList, TabPanel as TabBody, Tabs } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css';
 import { MdLanguage } from 'react-icons/md'
@@ -11,22 +11,22 @@ import { useParams } from 'react-router-dom';
 import LoadingPage from '../../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import {  useUpdateBenefit } from '../../../../api/benefit';
+import {  useUpdateSubBenefit } from '../../../../api/subBenefit';
 import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
-  const {id} = useParams()
+  const {sub_id} = useParams()
 
-  const {mutate ,isSuccess} = useUpdateBenefit()
+  const {mutate ,isSuccess} = useUpdateSubBenefit()
   const handleSubmit = (values:any)=>{
   
 
     return mutate(getDataToSend({
       ...values ,
-      service_id:id
+      sub_service_id:sub_id
     }));
   }
 

@@ -25,11 +25,9 @@ function Form() {
   
     </Col>
     <Col>
-    <ValidationField name="price"  />
 
 
     </Col>
-    <ValidationField name="whatsapp_view" />
 
 
 

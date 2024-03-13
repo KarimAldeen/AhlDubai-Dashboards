@@ -28,7 +28,7 @@ function SubService() {
  <DashHeader showAddButton={false} title={'SubService'}>
       <div className='RightSide d-flex gap-2 align-center '>
 
-     <AddButton  onClick={()=>navigate('/service/sub/add')}></AddButton>
+     <AddButton  onClick={()=>navigate('sub/add')}></AddButton>
      </div>
       </DashHeader>
         <LyTable

@@ -10,8 +10,19 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
   // Initialize the initial values object
   const initialValues: any = {
     id: objectToEdit?.id ?? null,
-    sub_service_id: objectToEdit?.id ?? null,
+    sub_service_benefit_id: objectToEdit?.id ?? null,
     ...langauge_initial_values_genrater(["name"],objectToEdit) ,
+  };
+
+  return initialValues;
+};
+
+
+export const getAddInitialValues = (objectToEdit: any | null = null): any => {
+
+  // Initialize the initial values object
+  const initialValues: any = {
+    ...langauge_initial_values_genrater(["name"],null) ,
   };
 
   return initialValues;
