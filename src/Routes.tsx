@@ -63,6 +63,12 @@ import AddHeroSection from "./Pages/HeroSection/View/AddPage";
 import EditHeroSection  from "./Pages/HeroSection/View/EditPage";
 
 
+//patient_say
+import PatientSayPage from "./Pages/PatientSay/Page";
+import AddPatientSay from "./Pages/PatientSay/View/AddPage";
+import EditPatientSay  from "./Pages/PatientSay/View/EditPage";
+
+
 // import SliderPage from "./Pages/Slider/Page";
 // import AddSliderPage from "./Pages/Slider/View/AddPage";
 // import EditSlider  from "./Pages/Slider/View/EditPage";
@@ -148,6 +154,23 @@ export const RoutesLinks: RoutesLinksType[] = [
     {
         href: "/herosection/add",
         element: <AddHeroSection />,
+        hidden: true
+    },
+    //PatientSay
+    {
+        name: "PatientSay",
+        element: <PatientSayPage />,
+        icon: <FaProductHunt />,
+        href: "/patient_say",
+    },
+    {
+        href: "/patient_say/edit",
+        element: <EditPatientSay />,
+        hidden: true
+    },
+    {
+        href: "/patient_say/add",
+        element: <AddPatientSay />,
         hidden: true
     },
     // {
