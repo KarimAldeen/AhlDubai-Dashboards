@@ -36,11 +36,11 @@ import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
       </DashHeader>
       
       <LyTable
-        data={data?.data}
+        data={data}
         isLoading={false}
         columns={column}
         total={totalRows }
-        is_pagination={true}
+        is_pagination={false}
     />
       
     

@@ -17,25 +17,24 @@ import SearchField from '../../Layout/Dashboard/SearchField'
     const {data  ,status } = useGetService()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    const totalRows = data?.pagination?.total;
     
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
       <DashHeader showAddButton={false} title={'Service'}>
       <div className='RightSide d-flex gap-2 align-center '>
-     <SearchField searchBy={"title"} />
+     {/* <SearchField searchBy={"title"} /> */}
 
      <AddButton  onClick={()=>navigate('/Service/add')}></AddButton>
      </div>
       </DashHeader>
       
       <LyTable
-        data={data?.data}
+        data={data}
         isLoading={false}
         columns={column}
-        total={totalRows }
-        is_pagination={true}
+        // total={totalRows }
+        is_pagination={false}
     />
       
     

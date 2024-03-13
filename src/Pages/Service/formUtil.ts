@@ -48,6 +48,15 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
 export const getDataToSend = (values: any): FormData => {
   const data = { ...values };
   
+  if(typeof data['image'] == 'string'){
+    delete data['image']
+  }
+
+
+  if(typeof data['sub_image'] == 'string'){
+    delete data['sub_image']
+  }
+  
   
   const formData = new FormData();
   buildFormData(formData, data);

@@ -14,6 +14,8 @@ import { BsInfoCircle } from 'react-icons/bs';
 import {  useUpdateService } from '../../../api/Service';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
+import SubService from '../SubService/SubService';
+import ServiceBenefit from '../ServiceBenefit/ServiceBenefit';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
@@ -23,7 +25,12 @@ const EditPage = () => {
   
     const newData = {} as any;
 
-    return mutate(newData);
+    
+    
+    return mutate(getDataToSend({
+      ...values,
+      service_id:objectToEdit?.id
+    }));
   }
 
   useNavigateOnSuccess(isSuccess , '/Service')
@@ -47,13 +54,20 @@ const EditPage = () => {
           <Tabs>
             <TabList>
               <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("BasicInfo")}</h6></div></Tab>
+              <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("SubService")}</h6></div></Tab>
+              <Tab><div className='SignleDriverContainer'><span className='SignleDriverInfoIcon'><MdLanguage size={20} /></span> <h6 className='SingleDriverInfo'>{t("ServiceBenefit")}</h6></div></Tab>
 
             </TabList>
             <TabBody >
               <div className=" mt-4"><Form /></div>
             </TabBody>
          
-    
+            <TabBody >
+              <div className=" mt-4"><SubService /></div>
+            </TabBody>
+            <TabBody >
+              <div className=" mt-4"><ServiceBenefit /></div>
+            </TabBody>
           </Tabs>
         </ViewPage>
         : <LoadingPage />}
