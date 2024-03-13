@@ -6,11 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { LoadingButton } from '../../../../Components/Ui/LoadingButton';
 import { useNavigate } from 'react-router-dom';
     
-    export default function LastUserTable({ most_driver_rate }:any) {
+    export default function LastUserTable({ data }:any) {
       const columns = useTableColumns();
       const {t} = useTranslation();
-      const navigate  = useNavigate()
-        // console.log(most_driver_rate);
         
 
       return (
@@ -27,7 +25,7 @@ import { useNavigate } from 'react-router-dom';
             <DataTable
               columns={columns as any }
        
-              data={most_driver_rate}
+              data={data}
               noDataComponent={<h6 className="my-4">{t("no_records")}</h6>}
               noHeader
             />

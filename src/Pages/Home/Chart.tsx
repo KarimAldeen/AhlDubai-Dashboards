@@ -18,25 +18,25 @@ const chartSetting = {
 };
 
 
-const BarsDataset = () => {
-    const [t] = useTranslation()
-    const dataset = [
-        {london: 59, paris: 57, newYork: 86, seoul: 21, month: t('January')},
-        {london: 59, paris: 57, newYork: 86, seoul: 21, month: t('February')},
-        {london: 59, paris: 57, newYork: 86, seoul: 21, month: t('March')},
-        {london: 59, paris: 57, newYork: 86, seoul: 21, month: t('April')},
+const BarsDataset = ({dataMonth}:any) => {
 
-    ];
+  
+    const [t] = useTranslation()
+    const dataset = dataMonth;
+    console.log(dataset);
+    
 
     const series = [
-        { dataKey: 'london', label: t('London'), valueFormatter: (value: number) => `${value}mm` },
-        { dataKey: 'paris', label: t('Paris'), valueFormatter: (value: number) => `${value}mm` },
-        { dataKey: 'newYork', label: t('New York'), valueFormatter: (value: number) => `${value}mm` },
-        { dataKey: 'seoul', label: t('Seoul'), valueFormatter: (value: number) => `${value}mm` },
+        { dataKey: 'visit', label: t('visit'), valueFormatter: (value: number) => `${value}` },
+        { dataKey: 'whatsapp', label: t('whatsapp'), valueFormatter: (value: number) => `${value}` }
     ];
 
-    const months = dataset.map(data => data.month);
 
+    if(!dataMonth){
+        return <>
+            
+        </>;
+    }
     return (
         <div className="Card BarChart" >
             <BarChart

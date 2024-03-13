@@ -7,7 +7,7 @@ import { LoadingButton } from '../../../../Components/Ui/LoadingButton';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function LastOrderTable({ latest_Orders }:any) {
+export default function LastWhatsappClickTable({ data }:any) {
   
   const columns = useTableColumns();
   const {t} = useTranslation();
@@ -16,16 +16,14 @@ export default function LastOrderTable({ latest_Orders }:any) {
     <Card>
       <div  className="primary" style={{display:"flex" , justifyContent:"space-between" , padding:"20px", marginTop:"10px"}}>
 
-        {t("latest_orders")}
-        <LoadingButton color="primary" onClick={() => navigate("/order",{replace:true})}>
-          {t("show_all_orders")}
-        </LoadingButton>
+        {t("latest_user_click_whatsapp")}
+     
       </div>
 
       <CardBody>
         <DataTable
           columns={columns as any}
-          data={latest_Orders}
+          data={data}
           noDataComponent={<h6 className="my-4">{t("no_records")}</h6>}
           noHeader
         />

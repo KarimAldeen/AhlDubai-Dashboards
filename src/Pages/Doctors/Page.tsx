@@ -35,7 +35,7 @@ import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
       <div className='RightSide d-flex gap-2 align-center '>
      {/* <SearchField searchBy={"title"} /> */}
 
-     <AddButton  onClick={()=>handelAdd}></AddButton>
+     <AddButton  onClick={handelAdd}></AddButton>
      </div>
       </DashHeader>
       
