@@ -12,7 +12,7 @@ type AxiosResponse = {
 const useUpdateMutation = (
   key: string,
   url: string,
-  toastMessage: boolean = false,
+  toastMessage: boolean = true,
   method?:string
 ): UseMutationResult<AxiosResponse, unknown, unknown> => {
   const axios = useAxios();

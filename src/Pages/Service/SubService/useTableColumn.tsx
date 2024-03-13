@@ -18,8 +18,10 @@ const useTableColumns :any = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   function handelEdit(row:any){
     setObjectToEdit(row)
-     navigate(`edit`)
+     navigate(`/service/sub/edit`)
   }
+
+
 
   return useMemo(
     () => [
@@ -53,11 +55,12 @@ const useTableColumns :any = () => {
         cell: (row:any) => (
           <Actions
             objectToEdit={row}
-            
             onEdit={()=> handelEdit(row) }
+
             showView={false}
             showEdit={true}
             onDelete={() => deleteMutation.mutate({ id: row.id })}
+
           />
         ),
       },

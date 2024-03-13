@@ -18,7 +18,6 @@ import { useGetDoctors } from '../../api/Doctors'
     const {data  ,status } = useGetDoctors()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    console.log(data);
     
     const totalRows = data?.pagination?.total;
     

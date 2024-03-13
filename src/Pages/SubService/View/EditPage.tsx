@@ -21,12 +21,14 @@ const EditPage = () => {
   const {mutate ,isSuccess} = useUpdateSubService()
   const handleSubmit = (values:any)=>{
   
-    const newData = {} as any;
+    return mutate(getDataToSend({
+      ...values ,
+      sub_service_id:objectToEdit?.id
+    }));
 
-    return mutate(newData);
   }
 
-  useNavigateOnSuccess(isSuccess , '/SubServices')
+  useNavigateOnSuccess(isSuccess , "/service")
 
 
 

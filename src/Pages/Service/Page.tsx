@@ -10,14 +10,21 @@ import { useNavigate } from 'react-router-dom'
 import AddButton from '../../Layout/Dashboard/AddButton/AddButton'
 import { useGetService } from '../../api/Service'
 import SearchField from '../../Layout/Dashboard/SearchField'
+import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
+
 
  function Page() {
-
+    
     const column   =useTableColumns()
     const {data  ,status } = useGetService()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    
+    const { setObjectToEdit, objectToEdit } = usePageState()
+
+      function handelAdd(){
+        setObjectToEdit(null)
+        navigate('add')
+      } 
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
@@ -25,7 +32,7 @@ import SearchField from '../../Layout/Dashboard/SearchField'
       <div className='RightSide d-flex gap-2 align-center '>
      {/* <SearchField searchBy={"title"} /> */}
 
-     <AddButton  onClick={()=>navigate('/Service/add')}></AddButton>
+     <AddButton  onClick={()=>handelAdd}></AddButton>
      </div>
       </DashHeader>
       
