@@ -2,6 +2,7 @@ import { langauge_validation_genrater, langauge_initial_values_genrater } from '
 
 import * as Yup from "yup";
 import { buildFormData } from "../../../../api/helper/buildFormData";
+import { languages } from "../../../../config/AppKey";
 
 interface formUtilCommon {
   number:number,
@@ -20,9 +21,8 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
   // Initialize the initial values object
   const initialValues: any = {
     id: objectToEdit?.id ?? null,
-    service_benefit_id: objectToEdit?.id ?? null,
+    sub_service_id: objectToEdit?.id ?? null,
     ...langauge_initial_values_genrater(["name"],objectToEdit) ,
-
   };
 
   return initialValues;
@@ -33,7 +33,6 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
 export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> => {
   // Validate input
   return Yup.object().shape({
-    service_id: Yup.string().required('Required'),
     ...langauge_validation_genrater(["name"]) 
   });
 };

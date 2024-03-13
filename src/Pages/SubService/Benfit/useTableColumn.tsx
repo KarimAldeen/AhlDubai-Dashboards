@@ -27,20 +27,6 @@ const useTableColumns :any = () => {
  
 
       {
-        name: t("price"),
-        sortable: false,
-        center: "true",
-        
-        cell: (row:any) =>  row?.price
-      },
-      {
-        name: t("whatsapp_view"),
-        sortable: false,
-        center: "true",
-        
-        cell: (row:any) =>  row?.whatsapp_view
-      },
-      {
         name: t("name"),
         sortable: false,
         center: "true",

@@ -19,7 +19,7 @@ const useTableColumns :any = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   function handelEdit(row:any){
     setObjectToEdit(row)
-     navigate(`benefit/${row?.id}`)
+     navigate(`banner/${row?.id}`)
   }
 
   return useMemo(
@@ -37,6 +37,7 @@ const useTableColumns :any = () => {
           return <ColumnsImage src={str} />
         }
       },
+      
       {
         name: "#",
         sortable: false,

@@ -21,9 +21,16 @@ function Form() {
     <Col>
     {langauge_field_genrater(["name"])}
     
+
+  
     </Col>
-   
-   
+    <Col>
+
+
+    </Col>
+
+
+
    
   </Row>
   )

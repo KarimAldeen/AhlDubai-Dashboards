@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getInitialValues, getValidationSchema, getDataToSend } from './formUtil'
+import { getInitialValues, getValidationSchema, getDataToSend } from '../../formUtil'
 import { Tab, TabList, TabPanel as TabBody, Tabs } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css';
 import { MdLanguage } from 'react-icons/md'

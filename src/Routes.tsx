@@ -78,6 +78,19 @@ import WebsiteInfoPage from "./Pages/WebsiteInfo/Page";
 import AddWebsiteInfo from "./Pages/WebsiteInfo/View/AddPage";
 import EditWebsteInfo  from "./Pages/WebsiteInfo/View/EditPage";
 
+//sub_banner
+import AddSubServiceBanner from "./Pages/SubService/Banner/View/AddPage";
+import EditSubServiceBanner from "./Pages/SubService/Banner/View/EditPage";
+
+
+//sub_Benfit
+import AddSubServiceBenfit from "./Pages/SubService/Benfit/View/AddPage";
+import EditSubServiceBenfit from "./Pages/SubService/Benfit/View/EditPage";
+
+
+
+
+
 // import SliderPage from "./Pages/Slider/Page";
 // import AddSliderPage from "./Pages/Slider/View/AddPage";
 // import EditSlider  from "./Pages/Slider/View/EditPage";
@@ -249,6 +262,27 @@ export const RoutesLinks: RoutesLinksType[] = [
         element: <AddSubServicePage />,
         hidden: true
     },
+    {
+        href: "/service/:id/sub/:sub_id/banner/add",
+        element: <AddSubServiceBanner />,
+        hidden: true
+    },
+    {
+        href: "/service/:id/sub/:sub_id/banner/:banner_id",
+        element: <EditSubServiceBanner />,
+        hidden: true
+    },
+    {
+        href: "/service/:id/sub/:sub_id/benefit/add",
+        element: <AddSubServiceBenfit />,
+        hidden: true
+    },
+    {
+        href: "/service/:id/sub/:sub_id/benefit/:benefit_id",
+        element: <EditSubServiceBenfit />,
+        hidden: true
+    },
+   
     // {
     //     name: "ServiceBenefit",
     //     element: <ServiceBenefitPage />,

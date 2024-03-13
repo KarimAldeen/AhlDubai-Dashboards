@@ -26,15 +26,18 @@ export const langauge_initial_values_genrater = (fieldNames: string[], objectToE
 };
 
 // Function to generate language-specific ValidationField components
-export const langauge_field_genrater = (fieldNames: string[]): JSX.Element[] => {
+export const langauge_field_genrater = (fieldNames: string[],type : any ="text"): any => {
   const fields: JSX.Element[] = [];
   fieldNames.forEach((fieldName: string) => {
     languages?.forEach((language: string, index: number) => {
-      fields.push(<ValidationField key={`${fieldName}_${language}_${index}`} name={`${fieldName}_${language}`} />);
+      fields.push(<ValidationField  key={`${fieldName}_${language}_${index}`} name={`${fieldName}_${language}`}  type={type} />);
     });
   });
   return fields;
 };
+
+
+
 
 
 
