@@ -10,6 +10,7 @@ import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import { useAddSubBenefit } from '../../../../api/subBenefit';
 import Form from './AddForm';
 import { useParams } from 'react-router-dom';
+import { usePageState } from '../../../../lib/state mangment/dist/LayoutPagestate';
 
 const AddBenefitPage = () => {
     
@@ -34,7 +35,13 @@ const AddBenefitPage = () => {
 
   const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit };
 
+  const { setObjectToEdit, objectToEdit } = usePageState()
 
+  useEffect(() => {
+    
+      setObjectToEdit(null)
+  
+  }, [])
   return (
     <div className='ViewPage'>
   

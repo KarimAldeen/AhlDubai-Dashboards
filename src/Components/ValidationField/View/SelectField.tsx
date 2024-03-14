@@ -6,6 +6,9 @@ const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti,onCha
 
   const {  errorMsg, isError, t ,formik} = useFormField(name, props)
   const SelecthandleChange = (value: { value: string; label: React.ReactNode }) => {
+    console.log(value,"value");
+    console.log(name,"name");
+
      formik.setFieldValue(name, value)
 
   };

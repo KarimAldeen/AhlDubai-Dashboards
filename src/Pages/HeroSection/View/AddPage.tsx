@@ -10,6 +10,7 @@ import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddDoctors } from '../../../api/Doctors';
 import Form from './AddForm';
 import { useAddHeroSection } from '../../../api/hero_section';
+import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
 
 const AddDoctorsPage = () => {
     
@@ -30,7 +31,13 @@ const AddDoctorsPage = () => {
 
   const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit };
 
+  const { setObjectToEdit, objectToEdit } = usePageState()
 
+  useEffect(() => {
+    
+      setObjectToEdit(null)
+  
+  }, [])
 
 
   return (

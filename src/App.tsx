@@ -4,16 +4,13 @@ import Loading from './Components/Utils/Loading/Loading';
 import { RoutesLinks } from './Routes';
 import Layout from './Layout/app/Layout';
 import Auth from './Pages/Auth/Page';
-import { generateFingerprint } from './utils/generateUuid';
+// import { generateFingerprint } from './utils/generateUuid';
 
 const Page404 = lazy(() => import("./Layout/app/NotFoundPage"))
 
 const App = () => {
 
 
-  useEffect(()=>{
-    generateFingerprint()
-  },[])
 
   return (
     <Routes >

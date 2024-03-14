@@ -10,6 +10,7 @@ import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import { useAddSubBanner } from '../../../../api/subBanner';
 import Form from './AddForm';
 import { useParams } from 'react-router-dom';
+import { usePageState } from '../../../../lib/state mangment/dist/LayoutPagestate';
 
 const AddBannerPage = () => {
     
@@ -30,7 +31,13 @@ const AddBannerPage = () => {
 
   useNavigateOnSuccess(isSuccess , '/service'  )
   
+  const { setObjectToEdit, objectToEdit } = usePageState()
 
+  useEffect(() => {
+    
+      setObjectToEdit(null)
+  
+  }, [])
 
   const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit };
 

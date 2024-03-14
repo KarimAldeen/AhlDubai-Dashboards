@@ -91,6 +91,8 @@ import EditServiceBenefit  from "./Pages/ServiceBenefit/View/EditPage";
 import SubServicePage from "./Pages/SubService/Page";
 import AddSubServicePage from "./Pages/SubService/View/AddPage";
 import EditSubService  from "./Pages/SubService/View/EditPage";
+import SingleAddForm from "./Pages/SubService/View/SingleAddForm";
+import SingleAddPage from "./Pages/SubService/View/SingleAddPage";
   
   
 
@@ -258,6 +260,18 @@ export const RoutesLinks: RoutesLinksType[] = [
     //     icon: <BiSolidCategory />,
     //     href: "/service/sub",
     // },
+    {
+        name: "subservice",
+        element: <SubServicePage />,
+        icon: <FaHome />,
+        href: "/subservice",
+    },
+    {
+        element: <SingleAddPage />,
+        href: "/subservice/add",
+        hidden: true
+
+    },
     {
         href: "/service/:id/sub/:sub_id",
         element: <EditSubService />,

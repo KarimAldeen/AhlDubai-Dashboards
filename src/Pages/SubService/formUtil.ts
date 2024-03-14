@@ -14,6 +14,9 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
     sub_service_id: objectToEdit?.id ?? null,
     whatsapp_view: objectToEdit?.whatsapp_view ?? '',
     price: objectToEdit?.price ?? '',
+    service_id: objectToEdit?.service_id ?? null,
+
+    
     
 
     ...langauge_initial_values_genrater(["name"],objectToEdit) ,
@@ -31,6 +34,8 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
   return Yup.object().shape({
     price: Yup.string().required('Required'),
     whatsapp_view: Yup.string().required('Required'),
+    service_id: Yup.string().required('Required'),
+
     ...langauge_validation_genrater(["name"]) 
   });
 };

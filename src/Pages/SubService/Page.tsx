@@ -23,6 +23,9 @@ import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
 
     function handelAdd(){
       setObjectToEdit(null)
+      console.log("Helllosw");
+      
+      
       navigate('add')
     } 
   return (
@@ -32,12 +35,12 @@ import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
       <div className='RightSide d-flex gap-2 align-center '>
      <SearchField searchBy={"name"} />
 
-     <AddButton  onClick={()=>handelAdd}></AddButton>
+     <AddButton  onClick={()=>handelAdd()}></AddButton>
      </div>
       </DashHeader>
       
       <LyTable
-        data={data?.data}
+        data={data}
         isLoading={false}
         columns={column}
         total={totalRows }

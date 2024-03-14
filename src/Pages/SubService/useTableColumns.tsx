@@ -17,7 +17,7 @@ const useTableColumns :any = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   function handelEdit(row:any){
     setObjectToEdit(row)
-     navigate(`edit`)
+     navigate(`/service/${row?.service_id}/sub/${row?.id}`)
   }
 
   return useMemo(
@@ -28,34 +28,22 @@ const useTableColumns :any = () => {
         name: t("title"),
         sortable: false,
         center: "true", 
-        cell: (row:any) =>  convert_language_array_to_local(row?.language, "title")
+        cell: (row:any) =>  convert_language_array_to_local(row?.translations, "name")
       },
+      
       {
-        name: t("sub_title"),
+        name: t("whatsapp_view"),
         sortable: false,
         center: "true",
-        
-        cell: (row:any) =>  convert_language_array_to_local(row?.language, "sub_title")
+      
+        cell: (row:any) => row?.whatsapp_view
       },
       {
-        name: t("sub_image"),
+        name: t("price"),
         sortable: false,
         center: "true",
-       
-        cell: (row:any) =>  {
-          let str = row?.sub_image;
-          return <ColumnsImage src={str} />
-        }
-      },
-      {
-        name: t("image"),
-        sortable: false,
-        center: "true",
-       
-        cell: (row:any) =>  {
-          let str = row?.image;
-          return <ColumnsImage src={str} />
-        }
+      
+        cell: (row:any) => row?.price
       },
       {
         name: "#",
@@ -67,7 +55,7 @@ const useTableColumns :any = () => {
             
             onEdit={()=> handelEdit(row) }
             showView={false}
-            showEdit={false}
+            showEdit={true}
             onDelete={() => deleteMutation.mutate({ id: row.id })}
           />
         ),

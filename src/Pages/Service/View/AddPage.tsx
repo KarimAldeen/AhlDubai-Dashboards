@@ -10,6 +10,7 @@ import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddService } from '../../../api/Service';
 import Form from './AddForm';
 import { useParams } from 'react-router-dom';
+import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
 
 const AddServicePage = () => {
     
@@ -34,7 +35,13 @@ const AddServicePage = () => {
 
 
   const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit };
+  const { setObjectToEdit, objectToEdit } = usePageState()
 
+  useEffect(() => {
+    
+      setObjectToEdit(null)
+  
+  }, [])
 
   return (
     <div className='ViewPage'>
