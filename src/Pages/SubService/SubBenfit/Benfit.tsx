@@ -14,12 +14,11 @@ import { useGetSubServiceSubBenefit } from '../../../api/SubServiceSubBenfit';
 
 function Benefit() {
 
-
-  const {benefit_id:id} = useParams()
-  console.log(id);
-  const { data, status } = useGetSubServiceSubBenefit({sub_service_benefit_id:id});
+  const {benefit_id} = useParams()
+  const { data, status } = useGetSubServiceSubBenefit({sub_service_benefit_id:benefit_id});
 
   const columns = useTableColumns()
+  console.log(data);
   const { setObjectToEdit, objectToEdit } = usePageState()
   const navigate = useNavigate()
   function handelAdd() {

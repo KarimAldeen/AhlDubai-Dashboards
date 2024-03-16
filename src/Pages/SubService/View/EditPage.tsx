@@ -11,17 +11,18 @@ import { useParams } from 'react-router-dom';
 import LoadingPage from '../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import {  useUpdateSubService } from '../../../api/subServices';
+import {  useGetOneSubService, useUpdateSubService } from '../../../api/subServices';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
 import Banner from '../Banner/Banner';
 import Benefit from '../Benfit/Benfit';
 
 const EditPage = () => {
-  const { setObjectToEdit, objectToEdit } = usePageState()
+
   const {t} = useTranslation();
   const {mutate ,isSuccess} = useUpdateSubService()
-  const {id} = useParams()
+  const {id , sub_id} = useParams()
+  const {data:objectToEdit} = useGetOneSubService({sub_service_id:sub_id})
   const handleSubmit = (values:any)=>{
   
     return mutate(getDataToSend({
@@ -42,7 +43,7 @@ const EditPage = () => {
   };
 
 
-  const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit };
+  const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit , objectToEdit };
 
 
   return (

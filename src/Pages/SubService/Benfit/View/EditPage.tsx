@@ -11,15 +11,17 @@ import { useParams } from 'react-router-dom';
 import LoadingPage from '../../../../Layout/app/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { BsInfoCircle } from 'react-icons/bs';
-import {  useUpdateSubBenefit } from '../../../../api/subBenefit';
+import {  useGetOneSubServiceBenefit, useUpdateSubBenefit } from '../../../../api/subBenefit';
 import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
 import Benefit from '../../SubBenfit/Benfit';
 
 const EditPage = () => {
-  const { setObjectToEdit, objectToEdit } = usePageState()
+
+  
   const {t} = useTranslation();
-  const {sub_id} = useParams()
+  const {sub_id , benefit_id} = useParams()
+  const {data:objectToEdit}= useGetOneSubServiceBenefit({sub_service_benefit_id:benefit_id})
 
   const {mutate ,isSuccess} = useUpdateSubBenefit()
   const handleSubmit = (values:any)=>{
@@ -42,7 +44,7 @@ const EditPage = () => {
   };
 
 
-  const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit };
+  const ViewProps = { getInitialValues, getValidationSchema, getDataToSend, handleSubmit , objectToEdit };
 
 
   return (

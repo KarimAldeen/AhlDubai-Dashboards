@@ -12,7 +12,7 @@ const API = {
   UPDATE: `service/sub/benefit/sub/update`,
 
 };
-const KEY = "service/benefit"
+const KEY = "service/sub/benefit/sub"
 
 
 export const useGetSubServiceSubBenefit = (params?:any) => useGetQuery(KEY, API.GET_ALL,params);

@@ -6,5 +6,8 @@ import useGetQuery from "./helper/useGetQuery"
   };
 
   const KEY = "HOME";
-  export const useGetHome = (params?:any) => useGetQuery(KEY, API.GET, params);
+  export const useGetHome = (params?:any) => useGetQuery(KEY, API.GET, params, {
+    cacheTime:0,
+    staleTime:0
+  });
 

@@ -9,6 +9,8 @@ import useUpdateMutation from "./helper/useUpdateMutation";
 const API = {
   ADD: `service/add`,
   GET_ALL: `service/getAll`,
+  GET_ONE: `service/getOne`,
+
   DELETE: `service/delete`,
   UPDATE: `service/update`,
 
@@ -17,7 +19,7 @@ const KEY = "Services"
 
 
 export const useGetService = (params?:any) => useGetQuery(KEY, API.GET_ALL,params);
-export const useGetOneService = () => useGetOneQuery(KEY, API.GET_ALL);
+export const useGetOneService = (params?:any) => useGetQuery(KEY, API.GET_ONE , params);
 
 export const useAddService = () => useAddMutation(KEY, API.ADD);
 export const useUpdateService = () => useUpdateMutation(KEY, API.UPDATE);
