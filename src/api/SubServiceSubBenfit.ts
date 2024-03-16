@@ -2,6 +2,7 @@
 import useGetQueryPagination from "./helper/ueGetPagination";
 import useAddMutation from "./helper/useAddMutation"
 import useDeleteMutation from "./helper/useDeleteMutation"
+import useGetQuery from "./helper/useGetQuery";
 import useUpdateMutation from "./helper/useUpdateMutation";
   
 const API = {
@@ -14,7 +15,7 @@ const API = {
 const KEY = "service/benefit"
 
 
-export const useGetSubServiceSubBenefit = (params?:any) => useGetQueryPagination(KEY, API.GET_ALL,params);
+export const useGetSubServiceSubBenefit = (params?:any) => useGetQuery(KEY, API.GET_ALL,params);
 export const useAddSubServiceSubBenefit = () => useAddMutation(KEY, API.ADD);
 export const useUpdateSubServiceSubBenefit = () => useUpdateMutation(KEY, API.UPDATE);
 

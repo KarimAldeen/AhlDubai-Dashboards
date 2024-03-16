@@ -25,7 +25,6 @@ const EditPage = () => {
   
     const newData = {} as any;
 
-    console.log(values);
     
     return mutate(getDataToSend({
       ...values ,

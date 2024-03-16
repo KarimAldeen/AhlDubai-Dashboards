@@ -7,17 +7,19 @@ import useTableColumns from './useTableColumn';
 import { useGetBenefit } from '../../../api/benefit';
 import { useGetSubBenefit } from '../../../api/subBenefit';
 import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
 import { useGetSubServiceSubBenefit } from '../../../api/SubServiceSubBenfit';
 
 function Benefit() {
 
-  const { data, status } = useGetSubServiceSubBenefit();
+
+  const {benefit_id:id} = useParams()
+  console.log(id);
+  const { data, status } = useGetSubServiceSubBenefit({sub_service_benefit_id:id});
 
   const columns = useTableColumns()
-  console.log(data);
   const { setObjectToEdit, objectToEdit } = usePageState()
   const navigate = useNavigate()
   function handelAdd() {

@@ -20,7 +20,6 @@ import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
     const {data  ,status } = useGetHeroSection()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    console.log(data);
     const { setObjectToEdit, objectToEdit } = usePageState()
 
     function handelAdd(){

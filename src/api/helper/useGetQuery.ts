@@ -17,9 +17,7 @@ function useGetQuery(key: string, url: string , params:any={},options:any={}) {
 
   {
     onError: (error:any) => {
-      console.log('====================================');
-      console.log(error.response.status);
-      console.log('====================================');
+    
       if(error.response.status == 401 || error.response.status == 403){
           logout()
           navigate("/auth")

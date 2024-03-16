@@ -6,12 +6,14 @@ import LyTable from '../../../Layout/Dashboard/LyTable';
 import useTableColumns from './useTableColumn';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
 
 function SubService() {
 
-    const {data , status} = useGetSubService();
+  const {id} = useParams()
+  
+    const {data , status} = useGetSubService({service_id:id});
 
     const columns  = useTableColumns()
     

@@ -7,7 +7,6 @@ export default function useGetQueryPagination(KEY:string  , Api: string , params
   const axios = useAxios();
   const location = useLocation();
   const pagination = location?.search || '';
-// console.log(params);
 const {logout} = useAuthState()
 const language = localStorage.getItem("language") ?? "en"
 const navigate = useNavigate()

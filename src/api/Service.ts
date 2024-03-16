@@ -16,7 +16,7 @@ const API = {
 const KEY = "Services"
 
 
-export const useGetService = (params?:any) => useGetQueryPagination(KEY, API.GET_ALL,params);
+export const useGetService = (params?:any) => useGetQuery(KEY, API.GET_ALL,params);
 export const useGetOneService = () => useGetOneQuery(KEY, API.GET_ALL);
 
 export const useAddService = () => useAddMutation(KEY, API.ADD);

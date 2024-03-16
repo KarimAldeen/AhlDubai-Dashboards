@@ -35,7 +35,6 @@ const useTableColumns = () => {
                 sortable: false,
                 center: true,
                 cell:(row:any)=>{
-                    console.log(row);
                     
                     return (row?.created_at)
                 }

@@ -18,7 +18,6 @@ interface ObjectToEdit extends formUtilCommon {
 
 export const getInitialValues = (objectToEdit: any | null = null): any => {
 
-  console.log(langauge_initial_values_genrater(["name","type","description"],objectToEdit));
   
   // Initialize the initial values object
   const initialValues: any = {
@@ -47,10 +46,8 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
 export const getDataToSend = (values: any): FormData => {
   const data = { ...values };
   
-  console.log("ibrahim" ,data?.image);
   
   if(typeof data?.image == "string" ){
-    console.log("hello");
     
     delete data['image']
   }

@@ -39,7 +39,6 @@ export const useUploadWithProgress = (
       setPercentCompleted(0.0);
       const { data } = await axios.post(url, dataToSend, {
         onUploadProgress: (event:any) => {
-          console.log();
           
           if (event?.event?.lengthComputable) {
             setPercentCompleted(Math.round((event.loaded * 100) / event.total));

@@ -46,10 +46,8 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
 export const getDataToSend = (values: any): FormData => {
   const data = { ...values };
   
-  console.log("ibrahim" ,data?.image);
   
   if(typeof data?.image == "string" ){
-    console.log("hello");
     
     delete data['image']
   }

@@ -21,7 +21,6 @@ const AddSubServicesPage = () => {
     const {id} = useParams()
 
   const handleSubmit = (values:any)=>{
-      console.log(values,"values");
       
       return mutate(getDataToSend({
         ...values ,

@@ -19,7 +19,6 @@ const SearchField = ({ name, label, placeholder, isDisabled, searchBy, option, i
   const SelecthandleChange = (value: { value: string; label: React.ReactNode }) => {
     formik?.setFieldValue(name, value);
 
-    console.log(value);
   };
   const SearchHandleChange = (value:any) => {
     if (value || value !== "") {

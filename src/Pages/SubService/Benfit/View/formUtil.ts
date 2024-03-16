@@ -6,7 +6,6 @@ import { buildFormData } from "../../../../api/helper/buildFormData";
 
 
 export const getInitialValues = (objectToEdit: any | null = null): any => {
-    console.log(objectToEdit,"objectToEdit");
     
   // Initialize the initial values object
   const initialValues: any = {
@@ -20,7 +19,6 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
 
 
 export const getAddInitialValues = (objectToEdit: any | null = null): any => {
-  console.log(objectToEdit,"objectToEdit");
   
 // Initialize the initial values object
 const initialValues: any = {

@@ -23,7 +23,6 @@ const BarsDataset = ({dataMonth}:any) => {
   
     const [t] = useTranslation()
     const dataset = dataMonth;
-    console.log(dataset);
     
 
     const series = [

@@ -16,7 +16,7 @@ const API = {
 const KEY = "service/sub"
 
 
-export const useGetSubService = (params?:any) => useGetQueryPagination(KEY, API.GET_ALL,params);
+export const useGetSubService = (params?:any) => useGetQuery(KEY, API.GET_ALL,params);
 export const useAddSubService = () => useAddMutation(KEY, API.ADD);
 export const useUpdateSubService = () => useUpdateMutation(KEY, API.UPDATE);
 

@@ -7,13 +7,14 @@ import useTableColumns from './useTableColumn';
 import { useGetBenefit } from '../../../api/benefit';
 import { useGetSubBenefit } from '../../../api/subBenefit';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
 
 function Benefit() {
 
-    const {data , status} = useGetSubBenefit();
+  const {sub_id} = useParams()
+    const {data , status} = useGetSubBenefit({sub_service_id:sub_id});
 
     const columns  = useTableColumns()
     const { setObjectToEdit, objectToEdit } = usePageState()

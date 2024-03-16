@@ -13,18 +13,21 @@ import SearchField from '../../Layout/Dashboard/SearchField'
 import { useGetDoctors } from '../../api/Doctors'
 import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
 import { useGetWebsiteInfo } from '../../api/WebsiteInfo'
+import { QueryCache } from 'react-query'
+import { useGetService } from '../../api/Service'
 
  function Page() {
 
     const column   =useTableColumns()
+  
+    
     const {data  ,status } = useGetWebsiteInfo()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    
+
     const { setObjectToEdit, objectToEdit } = usePageState()
 
     function handelAdd(){
-      console.log('hello');
       
       setObjectToEdit(null)
       navigate('add')

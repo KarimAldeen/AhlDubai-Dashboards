@@ -16,7 +16,6 @@ const AddPartnersPage = () => {
 
     const {mutate , isLoading , isSuccess} = useAddPartners()
   const handleSubmit = (values:any)=>{
-      console.log(values,"values");
       
     mutate(values)  
    

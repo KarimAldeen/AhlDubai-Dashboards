@@ -16,7 +16,6 @@ const AddDoctorsPage = () => {
 
     const {mutate , isLoading , isSuccess} = useAddDoctors()
   const handleSubmit = (values:any)=>{
-      console.log(values,"values");
       
     mutate(values)  
    

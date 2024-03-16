@@ -15,7 +15,6 @@ function SingleAddForm() {
   const {data} = useGetService()    
   const SelectData = useFormatToSelect(data,"title")
 
-  console.log(SelectData);
   
 
 
