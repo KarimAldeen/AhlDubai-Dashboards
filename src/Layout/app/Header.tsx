@@ -26,9 +26,9 @@ const Header = () => {
   const [t] = useTranslation();
   const navigate = useNavigate()
 
-  // const { logout , user} = useAuthState()
+  const { logout , user} = useAuthState()
   const handelClick = () => {
-    // logout()
+      logout()
     navigate('/auth', { replace: true })
   }
 

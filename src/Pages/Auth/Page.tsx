@@ -18,7 +18,7 @@ const Auth = () => {
     <div className='Auth' style={{ background: `url(${LoginBg})` }}>
       <div className='In_Auth'>
         <div className="Left_Col">
-          <img className='Logo' src="../Logo.png" alt="Logo" />
+          <img className='Logo' src="../Logo.svg" alt="Logo" />
         </div>
         <div className=" Right_Col ">
           <LoginForm />
