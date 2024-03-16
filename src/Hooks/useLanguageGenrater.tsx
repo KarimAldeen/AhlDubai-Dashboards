@@ -19,7 +19,9 @@ export const langauge_initial_values_genrater = (fieldNames: string[], objectToE
   const fields: any = {};
   fieldNames.forEach((fieldName: string) => {
     languages?.forEach((language: string) => {
-      fields[`${fieldName}_${language}`] = objectToEdit ? convert_language_array_to_local(objectToEdit?.translations,fieldName) ?? "" : "";
+      console.log( convert_language_array_to_local(objectToEdit?.translations,fieldName) , "ibrahim,mmmm", fieldName);
+      
+      fields[`${fieldName}_${language}`] = objectToEdit ? convert_language_array_to_local(objectToEdit?.translations,fieldName , language) ?? "" : "";
     });
   });
   return fields;

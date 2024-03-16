@@ -7,12 +7,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDeletePartners } from "../../api/Partners";
 import { usePageState } from "../../lib/state mangment/LayoutPagestate";
 import { convert_language_array_to_local } from "../../utils/language/ConvertObjectToLocalLanguage";
+import { useDeleteService } from "../../api/Service";
 
 function fnDelete(props :any ){}
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
-  const deleteMutation = useDeletePartners()
+  const deleteMutation = useDeleteService()
   const navigate = useNavigate()
   const {id} = useParams()
   const { setObjectToEdit, objectToEdit } = usePageState()
@@ -69,7 +70,7 @@ const useTableColumns :any = () => {
             onEdit={()=> handelEdit(row) }
             showView={false}
             showEdit={true}
-            onDelete={() => deleteMutation.mutate({ id: row.id })}
+            onDelete={() => deleteMutation.mutate({ service_id: row.id })}
           />
         ),
       },

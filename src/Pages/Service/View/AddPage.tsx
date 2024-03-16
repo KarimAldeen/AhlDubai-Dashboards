@@ -20,6 +20,8 @@ const AddServicePage = () => {
 
   const handleSubmit = (values:any)=>{
       console.log(values,"values");
+      values['elemnt_type'] = 'big'
+
       
       
       return mutate(getDataToSend({

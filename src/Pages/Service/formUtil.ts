@@ -39,7 +39,7 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
 export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> => {
   // Validate input
   return Yup.object().shape({
-    name: Yup.string().required('Required'),
+    
     ...langauge_validation_genrater(["title","sub_title"]) 
   });
 };
