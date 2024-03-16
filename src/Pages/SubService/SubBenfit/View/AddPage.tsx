@@ -11,11 +11,12 @@ import { useAddSubBenefit } from '../../../../api/subBenefit';
 import Form from './AddForm';
 import { useParams } from 'react-router-dom';
 import { usePageState } from '../../../../lib/state mangment/dist/LayoutPagestate';
+import { useAddSubServiceSubBenefit } from '../../../../api/SubServiceSubBenfit';
 
 const AddBenefitPage = () => {
     
 
-    const {mutate , isLoading , isSuccess} = useAddSubBenefit()
+    const {mutate , isLoading , isSuccess} = useAddSubServiceSubBenefit()
     const {sub_id} = useParams()
   const handleSubmit = (values:any)=>{
       console.log(values,"values");

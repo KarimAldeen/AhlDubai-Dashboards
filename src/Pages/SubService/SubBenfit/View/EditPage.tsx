@@ -14,13 +14,14 @@ import { BsInfoCircle } from 'react-icons/bs';
 import {  useUpdateSubBenefit } from '../../../../api/subBenefit';
 import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import Form from './EditForm';
+import { useUpdateSubServiceSubBenefit } from '../../../../api/SubServiceSubBenfit';
 
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
   const {sub_id} = useParams()
 
-  const {mutate ,isSuccess} = useUpdateSubBenefit()
+  const {mutate ,isSuccess} = useUpdateSubServiceSubBenefit()
   const handleSubmit = (values:any)=>{
   
 

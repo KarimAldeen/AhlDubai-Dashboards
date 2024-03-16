@@ -8,13 +8,14 @@ import ColumnsImage from "../../../Components/Columns/ColumnsImage";
 import { convert_language_array_to_local } from "../../../utils/language/ConvertObjectToLocalLanguage";
 import Actions from "../../../Components/Ui/tables/Actions";
 import { useDeleteSubBenefit } from "../../../api/subBenefit";
+import { useDeleteSubServiceSubBenefit } from "../../../api/SubServiceSubBenfit";
 
 
 function fnDelete(props :any ){}
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
-  const deleteMutation = useDeleteSubBenefit()
+  const deleteMutation = useDeleteSubServiceSubBenefit()
   const navigate = useNavigate()
   const {id} = useParams()
   const { setObjectToEdit, objectToEdit } = usePageState()

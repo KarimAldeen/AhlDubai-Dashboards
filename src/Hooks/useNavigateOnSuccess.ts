@@ -11,7 +11,7 @@ function useNavigateOnSuccess(isSuccess :boolean , to_path:string , callbackAfte
             if (typeof callbackAfterSuccess === 'function') {
                 callbackAfterSuccess()
             }
-            navigate(to_path , {replace:true})
+            // navigate(to_path , {replace:true})
         }
     },[isSuccess])
 

@@ -10,10 +10,11 @@ import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
 import { useNavigate } from 'react-router-dom';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
+import { useGetSubServiceSubBenefit } from '../../../api/SubServiceSubBenfit';
 
 function Benefit() {
 
-  const { data, status } = useGetSubBenefit();
+  const { data, status } = useGetSubServiceSubBenefit();
 
   const columns = useTableColumns()
   console.log(data);

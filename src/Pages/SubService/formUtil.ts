@@ -34,7 +34,7 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
   return Yup.object().shape({
     price: Yup.string().required('Required'),
     whatsapp_view: Yup.string().required('Required'),
-    service_id: Yup.string().required('Required'),
+    // service_id: Yup.string().required('Required'),
 
     ...langauge_validation_genrater(["name"]) 
   });
