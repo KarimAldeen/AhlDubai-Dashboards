@@ -5,7 +5,7 @@ import { QueryStatusEnum } from '../../../config/QueryStatus';
 import LyTable from '../../../Layout/Dashboard/LyTable';
 import useTableColumns from './useTableColumn';
 import { useGetBenefit } from '../../../api/benefit';
-import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import { useNavigate, useParams } from 'react-router-dom';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';

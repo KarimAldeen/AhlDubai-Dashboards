@@ -10,7 +10,7 @@ import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddService } from '../../../api/Service';
 import Form from './AddForm';
 import { useParams } from 'react-router-dom';
-import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
 
 const AddServicePage = () => {
     

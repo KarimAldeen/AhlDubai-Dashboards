@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useDeleteBenefit } from "../../../api/benefit";
-import { usePageState } from "../../../lib/state mangment/dist/LayoutPagestate";
+import { usePageState } from "../../../lib/state mangment/LayoutPagestate";
 import { useNavigate, useParams } from "react-router-dom";
 import ColumnsImage from "../../../Components/Columns/ColumnsImage";
 import { convert_language_array_to_local } from "../../../utils/language/ConvertObjectToLocalLanguage";

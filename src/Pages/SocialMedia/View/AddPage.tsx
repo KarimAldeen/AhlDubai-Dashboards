@@ -10,7 +10,7 @@ import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddDoctors } from '../../../api/Doctors';
 import Form from './AddForm';
 import { useAddSocialmedia } from '../../../api/socialmedia';
-import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
 
 const AddDoctorsPage = () => {
     

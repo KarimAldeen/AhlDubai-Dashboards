@@ -6,7 +6,7 @@ import LyTable from '../../../Layout/Dashboard/LyTable';
 import useTableColumns from './useTableColumn';
 import { useGetBenefit } from '../../../api/benefit';
 import { useGetSubBenefit } from '../../../api/subBenefit';
-import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
 import { useNavigate, useParams } from 'react-router-dom';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';

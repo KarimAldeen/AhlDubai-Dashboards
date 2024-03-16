@@ -9,7 +9,7 @@ import { BsInfoCircle } from 'react-icons/bs';
 import useNavigateOnSuccess from '../../../Hooks/useNavigateOnSuccess';
 import { useAddPartners } from '../../../api/Partners';
 import Form from './AddForm';
-import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
 
 const AddPartnersPage = () => {
     

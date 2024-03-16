@@ -10,7 +10,7 @@ import useNavigateOnSuccess from '../../../../Hooks/useNavigateOnSuccess';
 import { useAddSubBanner } from '../../../../api/subBanner';
 import Form from './AddForm';
 import { useParams } from 'react-router-dom';
-import { usePageState } from '../../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../../lib/state mangment/LayoutPagestate';
 
 const AddBannerPage = () => {
     

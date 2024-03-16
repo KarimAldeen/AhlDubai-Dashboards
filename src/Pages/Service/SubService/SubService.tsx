@@ -7,7 +7,7 @@ import useTableColumns from './useTableColumn';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import { useNavigate, useParams } from 'react-router-dom';
-import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
 
 function SubService() {
 

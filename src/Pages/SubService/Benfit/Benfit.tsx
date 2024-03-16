@@ -8,7 +8,7 @@ import { useGetBenefit } from '../../../api/benefit';
 import { useGetSubBenefit } from '../../../api/subBenefit';
 import AddButton from '../../../Layout/Dashboard/AddButton/AddButton';
 import { useNavigate, useParams } from 'react-router-dom';
-import { usePageState } from '../../../lib/state mangment/dist/LayoutPagestate';
+import { usePageState } from '../../../lib/state mangment/LayoutPagestate';
 import DashHeader from '../../../Layout/Dashboard/DashHeader';
 
 function Benefit() {

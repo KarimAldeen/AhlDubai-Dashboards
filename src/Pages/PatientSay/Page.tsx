@@ -12,7 +12,7 @@ import { useGetPartners } from '../../api/Partners'
 import SearchField from '../../Layout/Dashboard/SearchField'
 import { useGetDoctors } from '../../api/Doctors'
 import { useGetPatientSay } from '../../api/PatientSay'
-import { usePageState } from '../../lib/state mangment/dist/LayoutPagestate'
+import { usePageState } from '../../lib/state mangment/LayoutPagestate'
 
  function Page() {
 
