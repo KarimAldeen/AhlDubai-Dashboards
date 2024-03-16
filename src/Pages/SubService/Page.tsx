@@ -18,12 +18,10 @@ import { usePageState } from '../../lib/state mangment/LayoutPagestate'
     const {data  ,status } = useGetSubService()
     const [t] = useTranslation()
     const navigate = useNavigate()
-    const totalRows = data?.pagination?.total;
     const { setObjectToEdit, objectToEdit } = usePageState()
 
     function handelAdd(){
       setObjectToEdit(null)
-      console.log("Helllosw");
       
       
       navigate('add')
@@ -31,9 +29,9 @@ import { usePageState } from '../../lib/state mangment/LayoutPagestate'
   return (
     // Pass Status to Layout 
     <DashBody status={status as QueryStatusEnum} >
-      <DashHeader showAddButton={false} title={'SubServices'}>
+      <DashHeader showAddButton={false} title={'subservice'}>
       <div className='RightSide d-flex gap-2 align-center '>
-     <SearchField searchBy={"name"} />
+     {/* <SearchField searchBy={"name"} /> */}
 
      <AddButton  onClick={()=>handelAdd()}></AddButton>
      </div>
@@ -43,8 +41,7 @@ import { usePageState } from '../../lib/state mangment/LayoutPagestate'
         data={data}
         isLoading={false}
         columns={column}
-        total={totalRows }
-        is_pagination={true}
+        is_pagination={false}
     />
       
     

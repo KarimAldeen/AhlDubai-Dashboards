@@ -122,6 +122,18 @@ export const RoutesLinks: RoutesLinksType[] = [
         href: "/",
     },
     {
+        name: "Service",
+        element: <ServicePage />,
+        icon: <BiSolidCategory />,
+        href: "/service",
+    },
+    {
+        name: "subservice",
+        element: <SubServicePage />,
+        icon: <FaHome />,
+        href: "/subservice",
+    },
+    {
         name: "Partners",
         element: <PartnersPage />,
         icon: <FaRegImages />,
@@ -238,12 +250,7 @@ export const RoutesLinks: RoutesLinksType[] = [
     //     element: <AddBlogPage />,
     //     hidden: true
     // },
-    {
-        name: "Service",
-        element: <ServicePage />,
-        icon: <BiSolidCategory />,
-        href: "/service",
-    },
+   
     {
         href: "/service/:id",
         element: <EditService />,
@@ -254,18 +261,7 @@ export const RoutesLinks: RoutesLinksType[] = [
         element: <AddServicePage />,
         hidden: true
     },
-    // {
-    //     name: "SubService",
-    //     element: <SubServicePage />,
-    //     icon: <BiSolidCategory />,
-    //     href: "/service/sub",
-    // },
-    {
-        name: "subservice",
-        element: <SubServicePage />,
-        icon: <FaHome />,
-        href: "/subservice",
-    },
+ 
     {
         element: <SingleAddPage />,
         href: "/subservice/add",
@@ -330,37 +326,5 @@ export const RoutesLinks: RoutesLinksType[] = [
         hidden: true
     },
  
-    // {
-    //     name: "Slider",
-    //     element: <SliderPage />,
-    //     icon: <FaProductHunt />,
-    //     href: "/Slider",
-    // },
-    // {
-    //     href: "/Slider/edit",
-    //     element: <EditSlider />,
-    //     hidden: true
-    // },
-    // {
-    //     href: "/Slider/add",
-    //     element: <AddSliderPage />,
-    //     hidden: true
-    // },
-    // {
-    //     name: "Footer",
-    //     element: <FooterPage />,
-    //     icon: <BiSolidCoupon />,
-    //     href: "/Footer",
-    // },
-    // {
-    //     href: "/Footer/edit",
-    //     element: <EditFooter />,
-    //     hidden: true
-    // },
-    // {
-    //     href: "/Footer/add",
-    //     element: <AddFooterPage />,
-    //     hidden: true
-    // },
-    // Add more pages following the same pattern...
+
 ];
