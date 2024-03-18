@@ -27,9 +27,10 @@ const EditPage = () => {
   
   const handleSubmit = (values:any)=>{
   
+    console.log(values);
+    
     const newData = {} as any;
 
-    values['elemnt_type'] = 'big'
     
     
     return mutate(getDataToSend({

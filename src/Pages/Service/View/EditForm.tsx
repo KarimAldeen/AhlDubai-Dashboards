@@ -15,6 +15,17 @@ function Form() {
   return (
     <Row xs={1} sm={1} md={2} lg={2} xl={2}>
       <Col>
+        <ValidationField
+        name='elemnt_type'
+        type='Select'
+        option={[
+          {label:"big" , value:"big"},
+          {label:"small" , value:"small"}
+
+        ]}
+
+        />
+
         {langauge_field_genrater(["title"])}
         <ValidationField name="sub_image" type="File" />
       </Col>

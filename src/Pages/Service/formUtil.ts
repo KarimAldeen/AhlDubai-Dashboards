@@ -22,7 +22,7 @@ export const getInitialValues = (objectToEdit: any | null = null): any => {
   const initialValues: any = {
     id: objectToEdit?.id ?? 0,
     service_id: objectToEdit?.id ?? 0,
-
+    elemnt_type:objectToEdit?.elemnt_type??"big",
     image: objectToEdit?.image ?? '',
     sub_image: objectToEdit?.sub_image ?? '',
 

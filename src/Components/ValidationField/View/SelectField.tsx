@@ -12,6 +12,8 @@ const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti,onCha
      formik.setFieldValue(name, value)
 
   };
+
+  
   return (
      <div className='ValidationField'>
         <label htmlFor={name} className="text">
@@ -28,7 +30,7 @@ const SelectField = ({ name, label, placeholder, isDisabled,option,isMulti,onCha
             options={option}
             size="large" 
             className={`${className} w-100`}
-            defaultValue={formik.values?.name}
+            defaultValue={formik.values[name]}
             allowClear
             {...(isMulti && { mode: "multiple" })}
             onChange={onChange || SelecthandleChange}

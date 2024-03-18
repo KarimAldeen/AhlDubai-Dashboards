@@ -19,10 +19,7 @@ const AddServicePage = () => {
     const {id} = useParams()
 
   const handleSubmit = (values:any)=>{
-      values['elemnt_type'] = 'big'
-
-      
-      
+            
       return mutate(getDataToSend({
         ...values
       }));
