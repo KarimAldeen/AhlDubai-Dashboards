@@ -17,16 +17,16 @@ const AddBenefitPage = () => {
     
 
     const {mutate , isLoading , isSuccess} = useAddSubServiceSubBenefit()
-    const {sub_id} = useParams()
+    const {sub_id,benefit_id} = useParams()
   const handleSubmit = (values:any)=>{
       console.log(values,"values");
       
-      return mutate(getDataToSend({
-        ...values ,
-        sub_service_id:sub_id
-      }));
-   
-    
+     
+    return mutate(getDataToSend({
+      ...values ,
+      sub_service_id:sub_id,
+      sub_service_benefit_id:benefit_id
+    }));
   }
   const {t} = useTranslation();
 

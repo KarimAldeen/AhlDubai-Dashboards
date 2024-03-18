@@ -19,7 +19,7 @@ import { useUpdateSubServiceSubBenefit } from '../../../../api/SubServiceSubBenf
 const EditPage = () => {
   const { setObjectToEdit, objectToEdit } = usePageState()
   const {t} = useTranslation();
-  const {sub_id} = useParams()
+  const {sub_id,benefit_id} = useParams()
 
   const {mutate ,isSuccess} = useUpdateSubServiceSubBenefit()
   const handleSubmit = (values:any)=>{
@@ -27,7 +27,8 @@ const EditPage = () => {
 
     return mutate(getDataToSend({
       ...values ,
-      sub_service_id:sub_id
+      sub_service_id:sub_id,
+      sub_service_benefit_id:benefit_id
     }));
   }
 

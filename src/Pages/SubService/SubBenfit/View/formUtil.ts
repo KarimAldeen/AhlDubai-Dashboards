@@ -8,9 +8,11 @@ import { buildFormData } from "../../../../api/helper/buildFormData";
 export const getInitialValues = (objectToEdit: any | null = null): any => {
 
   // Initialize the initial values object
+  console.log(objectToEdit,"objectToEdit");
+  
   const initialValues: any = {
     id: objectToEdit?.id ?? null,
-    sub_service_benefit_id: objectToEdit?.id ?? null,
+    sub_benefit_id: objectToEdit?.id ?? null,
     ...langauge_initial_values_genrater(["name"],objectToEdit) ,
   };
 
