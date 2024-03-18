@@ -5,7 +5,7 @@ import ValidationField from '../../../../Components/ValidationField/ValidationFi
 import { useFormikContext } from 'formik';
 
 import { useTranslation } from 'react-i18next';
-import { langauge_field_genrater } from '../../../../Hooks/useLanguageGenrater';
+import { langauge_field_genrater, langauge_field_genrater_file } from '../../../../Hooks/useLanguageGenrater';
 import { useGetService } from '../../../../api/Service';
 import useFormatToSelect from '../../../../Hooks/useFormatToSelect';
 
@@ -19,7 +19,7 @@ function Form() {
   return (
     <Row xs={1} sm={1} md={2} lg={2} xl={2}>
     <Col>
-    {langauge_field_genrater(["image"],"File")}
+    {langauge_field_genrater_file(["image"],"File")}
     
     </Col>
    

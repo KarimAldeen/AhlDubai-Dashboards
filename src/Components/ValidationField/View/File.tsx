@@ -5,11 +5,14 @@ import {  ImageBaseURL } from '../../../api/config';
 import { useTranslation } from 'react-i18next';
 
 
-const File = ({ name, label, onChange, isDisabled,placholder,className, props }: any) => {
+const File = ({ name, label, onChange, isDisabled,placholder,className, props , label2 }: any) => {
   const { formik, t ,isError} = useFormField(name, props)
   let FormikName = formik.values[name];
   const imageUrl = formik.values[name] ? ImageBaseURL + FormikName :  '';
   
+
+  const last_name = label2 ? t(label) +" " + t(label2) :t(`${label ?  label: name}`)
+
   const fileList: UploadFile[] = [
 
     {
@@ -31,7 +34,7 @@ const File = ({ name, label, onChange, isDisabled,placholder,className, props }:
   return (
     <div className="ValidationField">
       <label htmlFor={name} className="text">
-        {t(`${label || name}`)}
+        {t(`${last_name}`)}
       </label>
 
       <Upload

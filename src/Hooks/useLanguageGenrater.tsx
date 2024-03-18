@@ -40,5 +40,17 @@ export const langauge_field_genrater = (fieldNames: string[],type : any ="text")
 
 
 
+export const langauge_field_genrater_file = (fieldNames: string[],type : any ="text"): any => {
+  const fields: JSX.Element[] = [];
+  fieldNames.forEach((fieldName: string) => {
+    languages?.forEach((language: string, index: number) => {
+      
+      
+      fields.push(<ValidationField  key={`${fieldName}_${language}_${index}`} name={`${fieldName}_${language}`}  type={type}  label={`${fieldName}`}  label2={language} />);
+    });
+  });
+  return fields;
+};
+
 
 

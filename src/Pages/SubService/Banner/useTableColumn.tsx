@@ -7,13 +7,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import ColumnsImage from "../../../Components/Columns/ColumnsImage";
 import { convert_language_array_to_local } from "../../../utils/language/ConvertObjectToLocalLanguage";
 import Actions from "../../../Components/Ui/tables/Actions";
+import { useDeleteSubBanner } from "../../../api/subBanner";
 
 
 function fnDelete(props :any ){}
 
 const useTableColumns :any = () => {
   const [t] = useTranslation();
-  const deleteMutation = useDeleteSubService()
+  const deleteMutation = useDeleteSubBanner()
   const navigate = useNavigate()
   const {id} = useParams()
   const { setObjectToEdit, objectToEdit } = usePageState()
