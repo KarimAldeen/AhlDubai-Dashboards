@@ -13,7 +13,7 @@
 }
 
 @mixin GlassModeBG{
-  background-image: url("../../../public/Layout/mac.webp");
+  // background-image: url("../../../public/Layout/mac.webp");
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -21,7 +21,7 @@
   display: flex; justify-content: center; align-items: center;
 }
 @mixin GlassBG{
-  background-image: url("../../../public/Layout/mac.webp");
+  // background-image: url("../../../public/Layout/mac.webp");
   width: 100%;
   background-size: cover;
   background-position: center;
