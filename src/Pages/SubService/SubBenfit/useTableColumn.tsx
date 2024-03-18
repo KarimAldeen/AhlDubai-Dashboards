@@ -47,7 +47,7 @@ const useTableColumns :any = () => {
             onEdit={()=> handelEdit(row) }
             showView={false}
             showEdit={true}
-            onDelete={() => deleteMutation.mutate({ id: row.id })}
+            onDelete={() => deleteMutation.mutate({ sub_benefit_id: row.id })}
           />
         ),
       },
