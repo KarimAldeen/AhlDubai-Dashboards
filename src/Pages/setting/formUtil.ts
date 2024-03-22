@@ -26,8 +26,8 @@ export const getValidationSchema = (editMode: boolean = false): Yup.Schema<any> 
     // secondary_color: Yup.string().required("Secondary color is required").matches(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/, "Secondary color must be a valid hexadecimal color code"),
     font_family: Yup.string().required("Font family is required"),
     // logo: Yup.string().required("Logo is required")
-        primary_color: Yup.string().required("primary_color is required"),
-    secondary_color: Yup.string().required("secondary_color is required")
+        // primary_color: Yup.string().required("primary_color is required"),
+    // secondary_color: Yup.string().required("secondary_color is required")
 
   });
 };
