@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { HtmlEditor } from "./HtmlEditor";
 import { useFormikContext } from "formik";
 import { useTranslation } from "react-i18next";
@@ -35,9 +35,9 @@ const SingleLangEditor: FC<SingleLangEditorProps> = ({ langCode, property }) => 
   );
 };
 
-SingleLangEditor.propTypes = {
-  langCode: PropTypes.oneOf([1, 2]).isRequired,
-  property: PropTypes.oneOf(PROPERTY_TYPES).isRequired,
-};
+// SingleLangEditor.propTypes = {
+//   langCode: PropTypes.oneOf([1, 2]).isRequired,
+//   property: PropTypes.oneOf(PROPERTY_TYPES).isRequired,
+// };
 
 export default SingleLangEditor;

@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, CardHeader, CardTitle, CardBody, Button } from "reactstrap";
 import { Formik, Form } from "formik";
-import { LoadingButton } from "../../Components/Ui/LoadingButton";
-import ProgressBar from "../../Components/Ui/ProgressBar";
 import { useNavigate } from "react-router-dom";
 import { usePageState } from "../../lib/state mangment/LayoutPagestate";
 import { useTranslation } from "react-i18next";
@@ -11,7 +9,7 @@ type TViewPage ={
   children: React.ReactNode,
   getInitialValues:any,
    getValidationSchema:any,
-   getDataToSend:any,
+   getDataToSend?:any,
    handleSubmit:any,
   //  BarStatus:any,
    showProgressBar?:boolean,

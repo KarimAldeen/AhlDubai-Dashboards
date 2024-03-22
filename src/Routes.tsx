@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
 
 // Icons Import 
-import {  FaCartArrowDown, FaHome, FaInfo, FaProductHunt, FaRegImages, FaUser } from "react-icons/fa"
+import {   FaHome, FaInfo, FaProductHunt, FaRegImages } from "react-icons/fa"
 import { BiSolidCategory } from "react-icons/bi";
-import { BiSolidCoupon } from "react-icons/bi";
 
 import { IoShareSocial } from "react-icons/io5";
 import { PiFlagBanner } from "react-icons/pi";
@@ -82,7 +81,6 @@ import AddServicePage from "./Pages/Service/View/AddPage";
 import EditService  from "./Pages/Service/View/EditPage";
 
 
-import ServiceBenefitPage from "./Pages/ServiceBenefit/Page";
 import AddServiceBenefitPage from "./Pages/ServiceBenefit/View/AddPage";
 import EditServiceBenefit  from "./Pages/ServiceBenefit/View/EditPage";
   
@@ -91,12 +89,13 @@ import EditServiceBenefit  from "./Pages/ServiceBenefit/View/EditPage";
 import SubServicePage from "./Pages/SubService/Page";
 import AddSubServicePage from "./Pages/SubService/View/AddPage";
 import EditSubService  from "./Pages/SubService/View/EditPage";
-import SingleAddForm from "./Pages/SubService/View/SingleAddForm";
 import SingleAddPage from "./Pages/SubService/View/SingleAddPage";
   
-  
 
 
+
+import SettingPage from "./Pages/setting/EditPage";
+import { SettingFilled } from "@ant-design/icons";
 
 
 // import SliderPage from "./Pages/Slider/Page";
@@ -324,6 +323,13 @@ export const RoutesLinks: RoutesLinksType[] = [
         href: "/service/:id/benefit/add",
         element: <AddServiceBenefitPage />,
         hidden: true
+    },
+
+    {
+        name: "Setting",
+        element: <SettingPage />,
+        icon: <SettingFilled />,
+        href: "/setting",
     },
  
 

@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { ErrorMessage, useField, Field } from "formik";
 import { FormGroup } from "reactstrap";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";prop-types
 import { Eye, EyeOff } from "react-feather";
 import "./index.css";
 
@@ -50,8 +50,8 @@ const PasswordField: FC<PasswordFieldProps> = ({ name, label, ...props }) => {
   );
 };
 
-PasswordField.propTypes = {
-  name: PropTypes.string.isRequired,
-};
+// PasswordField.propTypes = {
+//   name: PropTypes.string.isRequired,
+// };
 
 export { PasswordField };
