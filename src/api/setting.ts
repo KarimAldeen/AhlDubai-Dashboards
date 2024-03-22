@@ -4,7 +4,7 @@ import useUpdateMutation from "./helper/useUpdateMutation";
   
 const API = {
   GET_ALL: `home/setting`,
-  UPDATE: `home/setting`,
+  UPDATE: `home/edit`,
 
 };
 const KEY = "Services"

@@ -5,9 +5,14 @@ import ValidationField from '../../Components/ValidationField/ValidationField';
 function Form() {
 
   const fontFamily = [
-    {label:"popins",value:"popins"},
-    {label:"popins",value:"popins"},
-    {label:"popins",value:"popins"}
+    {label:"Poppins",value:"Poppins"},
+    {label:"Tajawal",value:"Tajawal"},
+    {label:"OpenSans",value:"OpenSans"},
+    {label:"Inter",value:"Inter"},
+    {label:"FACEBOLF",value:"FACEBOLF"}
+    
+
+    // const fontarry = ["Poppins,Tajawal,OpenSans,Inter,FACEBOLF"]
 
   ]
   return (

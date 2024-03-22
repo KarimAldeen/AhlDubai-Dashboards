@@ -19,6 +19,9 @@ const EditPage = () => {
 
     
   const handleSubmit = (values:any)=>{
+    if( typeof values?.logo === "string" ){
+      delete  values["logo"]
+    }
   
     console.log(values);
     return mutate({
@@ -47,7 +50,7 @@ const EditPage = () => {
 
   return (
     <div className='ViewPage'>
-      {objectToEdit?.data ?
+      {objectToEdit ?
         <ViewPage {...ViewProps}>
           <Tabs>
             <TabList>
