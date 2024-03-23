@@ -1,15 +1,29 @@
-import { Fragment, lazy, Suspense, useEffect } from 'react';
+import { Fragment, lazy, Suspense, useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom'
 import Loading from './Components/Utils/Loading/Loading';
 import { RoutesLinks } from './Routes';
 import Layout from './Layout/app/Layout';
 import Auth from './Pages/Auth/Page';
+import { useGetHomeSetting } from './api/setting';
+import { setColor } from './Hooks/useColor';
 // import { generateFingerprint } from './utils/generateUuid';
 
 const Page404 = lazy(() => import("./Layout/app/NotFoundPage"))
 
 const App = () => {
 
+  const {data } = useGetHomeSetting()
+
+
+useLayoutEffect(() => {
+  if(data){
+    setColor("--primary",data?.primary_color)
+    setColor("--secondary",data?.secondary_color)
+    setColor("--font-family",`${data?.font_family},sans-serif`)
+
+  }
+
+}, [data])
 
 
   return (
