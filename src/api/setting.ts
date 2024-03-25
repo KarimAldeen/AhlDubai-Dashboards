@@ -7,7 +7,7 @@ const API = {
   UPDATE: `home/edit`,
 
 };
-const KEY = "Services"
+const KEY = "home/setting"
 
 
 export const useGetHomeSetting= (params?:any) => useGetQuery(KEY, API.GET_ALL,params);

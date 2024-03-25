@@ -6,7 +6,7 @@ export const ImageBaseURL = `https://ahlapi.kammun.com/`;
 
 
 export const BaseURL = `https://ahlapi.kammun.com/api/admin/`;
-export const BaseURL_IMAGE = BaseURL.slice(0,-1);
+export const BaseURL_IMAGE = "https://ahlapi.kammun.com/";
 
 
 const PROJECT_NAME = "Hijab"

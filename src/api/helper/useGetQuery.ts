@@ -3,14 +3,14 @@ import useAxios from './useAxios';
 import useAuthState from '../../lib/state mangment/AuthState';
 import { useNavigate } from 'react-router-dom';
 
-function useGetQuery(key: string, url: string , params:any={},options:any={}) {
+function useGetQuery(key: string, Api: string , params:any={},options:any={}) {
   const axios = useAxios();
   const {logout} = useAuthState()
   const navigate = useNavigate()
   return useQuery(
     params ? [key, params] : key,
      async () => {
-    const response = await axios.get(url , {params});
+    const response = await axios.get(Api , {params});
     return response.data.data; 
   },
   

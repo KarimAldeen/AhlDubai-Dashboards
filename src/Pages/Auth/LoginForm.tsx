@@ -10,6 +10,8 @@ import { LoadingButton } from '../../Components/Ui/LoadingButton';
 import useNavigateOnSuccess from '../../Hooks/useNavigateOnSuccess';
 import useAuthState from '../../lib/state mangment/AuthState';
 import ValidationField from '../../Components/ValidationField/ValidationField';
+import { BaseURL_IMAGE } from '../../api/config';
+import { useGetHomeSetting } from '../../api/setting';
 
 const LoginForm = () => {
   const [t] = useTranslation();
@@ -23,10 +25,13 @@ const LoginForm = () => {
     mutate(values)
     // Implemnt Your Auth Code 
   }
+  const {data:logodata} = useGetHomeSetting()
 
+    
   return (
     <div className='LoginForm'>
-      <img className='Logo' src="/Logo.svg" alt="Logo" width={10} />
+      {/* <img className='Logo' src="/Logo.svg" alt="Logo" width={10} /> */}
+      <img className='Logo' src={BaseURL_IMAGE+logodata?.logo} alt="Logo" />
 
       <nav className='Login_Nav'>
         <h5> {t("Login")} </h5>

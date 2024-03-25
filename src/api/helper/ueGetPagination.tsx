@@ -12,7 +12,7 @@ const language = localStorage.getItem("language") ?? "en"
 const navigate = useNavigate()
 
   return useQuery(
-    [KEY, pagination], async () => {
+    [KEY, pagination,params], async () => {
     const response = await axios.get(Api + pagination , {params});
     return response?.data?.data; 
   },

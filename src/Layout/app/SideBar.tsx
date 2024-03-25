@@ -4,32 +4,17 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link, useLocation } from 'react-router-dom';
 import { RoutesLinks } from '../../Routes';
 import { useTranslation } from 'react-i18next';
-import KarimLogo from './KarimLogo';
-import { useWindowSize } from '../../Hooks/useWindowSize';
-import Etaxi from './Etaxi';
-import { usePageState } from '../../lib/state mangment/LayoutPagestate';
-
+import { useGetHomeSetting } from '../../api/setting';
+import { BaseURL_IMAGE } from '../../api/config';
 interface SidebarProps {}
 
 const Sidebar: React.FC<SidebarProps> = () => {
   const { pathname } = useLocation();
-  // const  {isOpenAddModel  ,isOpenEditModel} = usePageState(state => state)
-  // useEffect(() => {
-  //     if(isOpenAddModel || isOpenEditModel){
-  //       setIsOpenSide(true);
-  //       document.getElementById('DashboardLayout_Body')?.classList.add('DashboardLayout_Body_Open');
-  //     }
-     
-  
-   
-  // }, [isOpenAddModel  ,isOpenEditModel])
-  
 
 
   const [isOpenSide, setIsOpenSide] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [t] = useTranslation();
-  const windowSize = useWindowSize()
   
   const handleHamburgerMenu = () => {
     setIsOpenSide(true);
@@ -45,12 +30,15 @@ const Sidebar: React.FC<SidebarProps> = () => {
   const handleDropdown = (index: number) => {
     setOpenDropdown((prev) => (prev === index ? null : index));
   };
+  const {data} = useGetHomeSetting()
+  console.log(data?.logo,"data");
+
 
   return (
     <div className={isOpenSide ? 'SideBar SideBar_Open' : 'SideBar noOpen'}>
       <div className='SideBar_Top'>
         <div onClick={handleImg} className={isOpenSide ? "" :'SideBarIMage'}>
-         <img src="../Logo.svg" width={isOpenSide ? 30 : 60} alt="" />
+         <img src={BaseURL_IMAGE+data?.logo} width={isOpenSide ? 30 : 60} alt="" />
          {/* <Etaxi/> */}
         </div>
         <div className='HamburgerMenu' onClick={handleHamburgerMenu}>
